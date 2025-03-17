@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('images.jfif');
+        }
+
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        nav {
+            background-color: #000000; /* لون الناف بار الأسود */
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #000000; /* لون القائمة المنسدلة الأسود */
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                transition: all 0.5s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        nav ul li a {
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ffcc00;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #000000; /* لون الفوتر الأسود */
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        footer .footer-section {
+            margin: 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Social media icons */
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        /* Copyright section */
+        footer .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid white;
+        }
+        h1 {
+            font-weight: bold;
+            color: red;
+        }
+
+ .container {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        justify-content: center; /* لتوسيط القسم */
+        align-items: center; /* لتوسيط القسم عموديًا */
+    }
+
+    .text-section {
+        flex: 5; /* 50% */
+        padding: 20px;
+        text-align: center; /* لجعل النصوص في منتصف النص */
+        font-size: 24px; /* حجم الخط */
+        line-height: 1.8; /* ارتفاع السطور */
+    }
+
+
+        .image-section img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* الصورة الثانية دائرية */
+        .container .image-section:last-child img {
+            border-radius: 50%; /* يجعل الصورة دائرية */
+        }
+
+    </style>
+</head>
+<body dir="rtl">
+
+    <!-- Main Container -->
+    <div id="main" class="container mt-3">
+        <div class="d-flex align-items-center">
+            <img class="im" src="mc.png" style="width: 80px; height: 100px; margin-top: 10px;">
+        </div>
+        <div class="text-center flex-grow-1">
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">وزارة الثقـــافة و الفنون</div>
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">المكــتبة الرئــيسية للمطــالعة العمومية</div>
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">المجاهد محمد عصـــامي - بــسكرة</div>
+        </div>
+        <div class="d-flex align-items-center">
+            <img class="im" src="bplp.png" style="width: 120px; height: 120px;">
+        </div>
+    </div>
+
+    <!-- شريط التنقل الجديد -->
+  <nav>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <ul id="nav-links">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="تعريف المكتبة  .html">تعريف للمكتبة</a>
+                                 <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
+                    <a class="dropdown-item" href="فضاءات المكتبة.html">فضاءات المكتبة</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">ملحقات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="bouchgron.html">بوشقرون</a>
+                    <a class="dropdown-item" href="mkhadma.html">مخادمة</a>
+                    <a class="dropdown-item" href="#">عين الناقه</a>
+                    <a class="dropdown-item" href="عين زعطوط.html">عين زعطوط</a>
+                    <a class="dropdown-item" href="liwa.html">لـيوة</a>
+                    <a class="dropdown-item" href="#">الحاجب</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">نشاطات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="نشاطات 2024.html">2024</a>
+                                    </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="http://192.168.1.26/test/OPAC.php">البحث البلبيوغرافي</a>
+              </li>
+        </ul>
+    </nav>
+
+
+</br></br>
+ <center><h1 class="title">فضاءات المكتبة الرئــيسية</h1></center>
+    <br>
+
+    <!-- القسم الأول -->
+    <div class="container">
+        <!-- قسم الكتابة -->
+        <div class="text-section">
+            <h2>قاعة الاستقبال</h2>
+            <p>
+                مساحة مخصص لاستقبال الضيوف و الزوار لتقديم المعلومات وهي أول نقطة تواصل مع الزوار.
+            </p>
+        </div>
+        <!-- قسم الصورة -->
+        <div class="image-section">
+            <img src="images/potp.jpg" alt="img-home1">
+        </div>
+    </div>
+
+    <!-- القسم الثاني -->
+    <div class="container">
+        <!-- قسم الصورة -->
+        <div class="image-section">
+            <img src="images/20.jpg" alt="img-home2">
+        </div>
+        <!-- قسم الكتابة -->
+        <div class="text-section">
+            <h2>قاعة الأطفال</h2>
+            <p>
+                قاعة للمطــالعة تستقبل شريحة الأطفال من سن 04الى 08 سنوات طاقة استعابها (30) طفلا و تحتوي على سلسلة من مصادر 
+                المعلومات 
+                (كتب تعلمية مبسطة,قصص,موسوعات)
+                ومجموعة من الألعاب التي تتناسب و هذه الفئة,والتي تساعد الطفل على الفهم المبسط و تنمي قدراته الفكرية,بالاضافة الى تقديم نشاطات مبرمجة تهدف بشكل أساسي الى 
+                غرس عادة القراءة و المطالعة بالدرجة الأولى
+            </p>
+        </div>
+    </div>
+<div class="container">
+        <!-- قسم الكتابة -->
+        <div class="text-section">
+            <h2>قاعة الاستقبال</h2>
+            <p>
+                مساحة مخصص لاستقبال الضيوف و الزوار لتقديم المعلومات وهي أول نقطة تواصل مع الزوار.
+            </p>
+        </div>
+        <!-- قسم الصورة -->
+        <div class="image-section">
+            <img src="images/18.jpg" alt="img-home1">
+        </div>
+    </div>
+
+    <!-- القسم الثاني -->
+    <div class="container">
+        <!-- قسم الصورة -->
+        <div class="image-section">
+            <img src="images/44.jpg" alt="img-home2">
+        </div>
+        <!-- قسم الكتابة -->
+        <div class="text-section">
+            <h2> قاعة المطالعة للكبار</h2>
+            <p>
+                مساحة مخصص لاستقبال الضيوف و الزوار لتقديم المعلومات وهي أول نقطة تواصل مع الزوار.
+            </p>
+        </div>
+    </div>
+<div class="container">
+        <!-- قسم الكتابة -->
+        <div class="text-section">
+            <h2>قاعة المتمدرسين</h2>
+            <p>
+               يضم هذا الفضاء كتب و مراجع في مختلف ميادين المعرفة البشرية ,بالاضاف الى المجلات
+                والرسائل الجامعية و القواميس,والتي تعمل على تزويد القراء بالمعرفة العلمية والثقافية طاقة استيعاب هذاالفضاء(50) 
+                قارئ
+            </p>
+        </div>
+        <!-- قسم الصورة -->
+        <div class="image-section">
+            <img src="images/18.jpg" alt="img-home1">
+        </div>
+    </div>
+
+    <!-- القسم الثاني -->
+    <div class="container">
+        <!-- قسم الصورة -->
+        <div class="image-section">
+            <img src="images/44.jpg" alt="img-home2">
+        </div>
+        <!-- قسم الكتابة -->
+        <div class="text-section">
+            <h2>قاعة المحاضرات</h2>
+            <p>
+                قاعة مخصصة لاقامة المحاضرات و الندوات و النشاطات الخاصة بالمكتبة مثل منتدى الكتاب وهي قاعة مجهزة بوسائل 
+             تقنية منها أجهزة العرض و الميكروفونات طاقة استيعاب 50 مقعد 
+.
+            </p>
+        </div>
+    </div>
+
+  <footer>
+        <div class="footer-content container">
+            <!-- First Section: Contact Info -->
+            <div class="footer-section">
+                <h2>معلومات الاتصال</h2>
+                <ul>
+                    <li>العنوان: شارع ............... بسكرة</li>
+                    <li>الهاتف: 033.55.46.42 </li>
+                     <li>الهاتف: 033.55.46.20 </li>
+                    <li>البريد الإلكتروني: info@library.com</li>
+                </ul>
+            </div>
+
+
+            <!-- Second Section: Quick Links -->
+            <div class="footer-section">
+                <h2>مواقع مهمة</h2>
+                <ul>
+                    <li><a href="#">وزارة الثقافة و الفنون </a></li>
+                    <li><a href="#">المكتبة الوطنية</a></li>
+                    <li><a href="#">...........</a></li>
+                    <li><a href="#">............</a></li>
+                </ul>
+            </div>
+
+            <!-- Third Section: Follow Us -->
+            <div class="footer-section">
+                <h2>تابعنا</h2>
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2024 جميع الحقوق محفوظة | مكتبة المجاهد محمد عصـــامي
+        </div>
+    </footer>
+
+
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>

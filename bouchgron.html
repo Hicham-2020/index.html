@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('images.jfif');
+        }
+
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        nav {
+            background-color: #000000; /* لون الناف بار الأسود */
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #000000; /* لون القائمة المنسدلة الأسود */
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                transition: all 0.5s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        nav ul li a {
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ffcc00;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #000000; 
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        footer .footer-section {
+            margin: 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Social media icons */
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        /* Copyright section */
+        footer .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid white;
+        }
+
+.prgh{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    direction: rtl;
+} 
+.vide1{
+    width: 10%;
+    height: 290px;
+} 
+.prgh1{
+    width: auto;
+    height: 290px;
+} 
+.sipr{
+    width: 2%;
+    height: 290px;
+} 
+
+.prgh2{
+    width: 38%;
+    height: 290px;
+} 
+.vide2{
+    width: 6%;
+    height:290px;
+} 
+
+ p{
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+} 
+
+h3 {
+    text-align: right;
+    margin-right: 80px;
+ color: red;
+    
+}
+h1 {
+     color: red;
+    font-weight: bold;
+}
+.paragraph2 {
+    width: auto;
+   height: auto;
+    display: flex; /* Utilisation de flexbox pour l'alignement horizontal */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+.vide-pr1 {
+    width: 80px; /* Largeur de la première section */
+ height: 200px;
+}
+
+.prgh3 {
+    width: 60%; /* Prend 60% de la largeur de paragraph2 */
+  height: auto;
+}
+
+.separation {
+    width: 20px; /* Largeur de l'espace entre les éléments */
+  height: 200px;
+}
+
+.image2 {
+    width: 20%; /* Prend 30% de la largeur de paragraph2 */
+  height: 200px;
+}
+
+.image2 img {
+    width: 100%; /* L'image occupe toute la largeur du conteneur */
+    height: 200px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* Pour que l'image soit bien adaptée */
+}
+
+.paragraph4 {
+    width: 100%; /* La div prend automatiquement la largeur nécessaire */
+    display: flex; /* Utilisation du flexbox pour organiser le contenu en ligne */
+    
+}
+
+
+.prh4 {
+    width: 100%; /* Le paragraphe occupe 60% de la div */
+    text-align: justify; /* Justifie le texte pour un meilleur alignement */
+margin-right: 80px;
+}
+
+.vide-after {
+    width: 16%; 
+}
+.pp{
+    margin-right: 80px;
+}
+.ttabl {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+}
+
+table {
+    width: 80%;
+height: 120px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #A8D5BA; /* أخضر فاتح للأعمدة */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+td {
+    font-size: 16px;
+}
+
+@media (max-width: 400px) {
+    table {
+        width: 100%;
+    }
+}
+footer h2 {
+    color: red;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body dir="rtl">
+
+    <!-- Main Container -->
+    <div id="main" class="container mt-3">
+        <div class="d-flex align-items-center">
+            <img class="im" src="mc.png" style="width: 80px; height: 100px; margin-top: 10px;">
+        </div>
+        <div class="text-center flex-grow-1">
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">وزارة الثقـــافة و الفنون</div>
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">المكــتبة الرئــيسية للمطــالعة العمومية</div>
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">المجاهد محمد عصـــامي - بــسكرة</div>
+        </div>
+        <div class="d-flex align-items-center">
+            <img class="im" src="bplp.png" style="width: 120px; height: 120px;">
+        </div>
+    </div>
+
+    <!-- شريط التنقل الجديد -->
+  <nav>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <ul id="nav-links">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="تعريف المكتبة  .html">تعريف للمكتبة</a>
+                                 <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
+                    <a class="dropdown-item" href="فضاءات المكتبة.html">فضاءات المكتبة</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">ملحقات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="bouchgron.html">بوشقرون</a>
+                    <a class="dropdown-item" href="mkhadma.html">مخادمة</a>
+                    <a class="dropdown-item" href="#">عين الناقه</a>
+                    <a class="dropdown-item" href="عين زعطوط.html">عين زعطوط</a>
+                    <a class="dropdown-item" href="liwa.html">لـيوة</a>
+                    <a class="dropdown-item" href="#">الحاجب</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">نشاطات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="نشاطات 2024.html">2024</a>
+                                    </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="http://192.168.1.26/test/OPAC.php">البحث البلبيوغرافي</a>
+              </li>
+        </ul>
+    </nav>
+
+
+</br> </br>
+ <div >
+
+      <center>  <h1 >تعريف مكتبة المطالعة العمومية بوشقرون</h1> </center>
+    </div> 
+ </br> </br>
+<div >
+        <center> <img src="images/60 (1).jpg" alt="Library Header" style="width: 60%; height: 500px; object-fit: cover;"></center>
+   </div>
+</br> </br>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">
+        هي مؤسسة ثقافية تعليمية فكرية وتثقيفية تعمل على حفظ التراث الفكري والثقافي الإنساني، ليكون في خدمة القراء والمواطنين من كافة الطبقات الاجتماعية والمهنية على اختلاف أعمارهم ومؤهلاتهم العلمية، وهي مؤسسة عمومية ذات طابع إداري تابعة للمكتبة الرئيسية للمطالعة العمومية لولاية بسكرة ،تحت وصاية وزارة الثقافة. تقع مكتبة المطالعة العمومية _بوشقرون _ في حي نهج الجمهورية بلدية بوشقرون.تبعد عن مقر الولاية ب21كلم. تتربع على مساحة تقدر بـ 10000 (متر مربع) م2. تم انشاؤها في اطار البرنامج الخاص بتطوير مناطق الجنوب ،ملحقة تابعة للمكتبة الرئيسية للمطالعة العمومية ولاية بسكرة .
+
+تم انشاؤها في 25ماي 2010 ؛وتم استلامها وفتح ابوابها للمستفيدين بتاريخ:07ماي2013 وقد سميت باسم الشهيد العيدي ابراهيم احد ابناء المنطقة المناضل في الثورة التحريرية الكبرى    </p>
+    <div class="vide-after"></div>
+</div>
+
+ <h3 >تسمية المكتبة بوشقرون الشهيد العيدي ابراهيم:</h3> 
+</br>
+ <div class="nom"> 
+       
+            
+                 <div class="paragraph2"> 
+    <div class="vide-pr1"></div>
+    <div class="prgh3">
+        <p>مناسبة يوم الشهيد المصادف لـ 18فبراير 2016 حيث كانت زيارة السيد والي ولاية بسكرة لتفقد الية المكتبة من ناحية المصالح و قاعات المطالعة وتفقد جل مرافق المكتبة و تم تدشين المكتبة "باسم الشهيد العيدي ابراهيم" احد اعيان المنطقة الذي ضحى من اجل الوطن .و ثم عرض كتب تاريخية من الرصيد الوثائقي للمكتبة بهذه المناسبة 18 افريل يوم الشهيد.
+
+،حيث أشرف على العملية السيد والي الولاية بحضور السلطات المدنية و العسكرية وجميع أبناء الشهداء و المجاهدين و وجوه ثقافية وفنية وتم الافتتاح الرسمي لمكتبة المطالعة العمومية بوشقرون بتاريخ 18 فيفري 2016.
+        </p>
+    </div> 
+    <div class="separation"></div>
+    <div class="image2">
+        <img src="images/60 (2).jpg">
+    </div>
+</div> 
+
+ </br>
+<h3 >مهــــام المكتبــــة:</h3> 
+
+  <div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">
+        عملا بأحكام المادة 06 من المرسوم التنفيذي رقم : 12 – 236 المؤرخ 03 رجب عام 1433 الموافق 24 ماي 2012 الذي يحدد القانون الأساسي للمكتبات الرئيسية للمطالعة العمومية (المعدل و المتمم 2007)  
+        تقوم المكتبة الرئيسية بالمهام التالية :
+    </p>
+    <div class="vide-after"></div>
+</div>
+<p class="pp">* توفير الكتاب بمختلف دعائمه لترقية المطالعة العمومية و تشجيعها.</p>
+<p class="pp">* وضع مختلف الأرصدة الوثائقية و الخدمات المرتبطة بالمطالعة العمومية و جميع الخدمات الملحقة الأخرى تحت تصرف المستعملين.</p>
+<p class="pp">* تخصيص فضاء للمطالعة يتكيف مع احتياجات الطفل.</p>
+<p class="pp">* توفير فضاء للدراسة و تحضير الامتحانات.</p>
+ <p class="pp">* تسهيل تطور الكفاءات القاعدية لاستعمال الإعلام والإعلام الآلي .</p>
+ <p class="pp">* توفير الوسائل التي تسمح للأشخاص المعاقين بالوصول للمطالعة العمومية.</p>
+<p class="pp">* تنظيم أنشطة ثقافية حول الكتاب.</p>
+
+
+
+
+<h3>أهداف المكتبة:</h3>
+ <div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">
+        المكتبة من المؤسسات التي تقدم مختلف خدماتها لجميع فئات المجتمع بالمجان لهذا فإنها تسعى لتحقيق الهداف التالية :
+    </p>
+    <div class="vide-after"></div>
+</div>
+<p class="pp">* إتاحة جميع مصادر المعلومات المتوفرة بالمجان.</p>
+<p class="pp">* أن تعكس سياسة تنمية المجموعات احتياجات المجتمع الفعلية.</p>
+<p class="pp">* تشجيع و تدعيم عادة القراءة داخل المجتمع.</p>
+<p class="pp">* القيام بالعديد من النشطة الثقافية و التعليمية في المناسبات الدينية و الوطنية.</p>
+<div class="table"> 
+       <h3>طـــــاقـــــة استيعــــــــاب المكتبــــــــــــة:</h3>
+        <br>
+       <div class="ttabl">
+    <table>
+        <tr>
+            <th>سعة الاستقبال</th>
+            <th>قاعة الأطفال</th>
+            <th>قاعة المتمدرسين الشباب</th>
+            <th>قاعة الكبار</th>
+            <th>قاعة الدوريات و الرسائل الجامعية</th>
+            <th>قاعة الإعلام الآلي</th>
+        </tr>
+        <tr>
+            <td>96</td>
+            <td>28</td>
+            <td>30</td>
+            <td>30</td>
+            <td>/</td>
+            <td>08</td>
+        </tr>
+    </table>
+</div>
+
+</br></br></br>
+
+   <footer>
+        <div class="footer-content container">
+            <!-- First Section: Contact Info -->
+            <div class="footer-section">
+                <h2>معلومات الاتصال</h2>
+                <ul>
+                    <li>العنوان: شارع ............... بسكرة</li>
+                    <li>الهاتف: 033.55.46.42 </li>
+                     <li>الهاتف: 033.55.46.20 </li>
+                    <li>البريد الإلكتروني: info@library.com</li>
+                </ul>
+            </div>
+
+
+            <!-- Second Section: Quick Links -->
+            <div class="footer-section">
+                <h2>مواقع مهمة</h2>
+                <ul>
+                    <li><a href="#">وزارة الثقافة و الفنون </a></li>
+                    <li><a href="#">المكتبة الوطنية</a></li>
+                    <li><a href="#">...........</a></li>
+                    <li><a href="#">............</a></li>
+                </ul>
+            </div>
+
+            <!-- Third Section: Follow Us -->
+            <div class="footer-section">
+                <h2>تابعنا</h2>
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2024 جميع الحقوق محفوظة | مكتبة المجاهد محمد عصـــامي
+        </div>
+    </footer>
+
+
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>المكتبة الرئيسية للمطالعة العمومية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        /* Add the styles for the image gallery here */
+        @media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+        .image-gallery {
+            display: flex;
+            justify-content: center; /* لتوسيط الصور */
+            align-items: center; /* لتوسيط الصور عموديًا */
+            gap: 10px; /* إضافة مسافة بين الصور */
+            margin: 20px 0;
+            flex-wrap: wrap; /* Permet à la galerie de s'adapter à différentes tailles d'écran */
+        }
+
+        .image-item {
+            width: 220px; /* عرض الصورة */
+            height: 220px; /* ارتفاع الصورة */
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Remove the hover animation */
+            /* transition: transform 0.3s ease-in-out; */
+            display: flex; /* Utilisation du flexbox pour centrer l'image */
+            align-items: center; /* Centre l'image verticalement */
+            justify-content: center; /* Centre l'image horizontalement */
+            position: relative; /* Position relative pour le figcaption */
+            text-decoration: none; /* Supprime le soulignement du lien */
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recadre l'image sans la déformer */
+            display: block;
+        }
+
+        /* Remove the hover animation */
+        .image-item:hover {
+            /* transform: scale(1.05); */
+        }
+
+        figure {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Remove figcaption styles */
+        figcaption {
+            display: none; /* Hide the figcaption */
+        }
+    </style>
+</head>
+
+<body dir="rtl">
+    <div class="headre">
+        <div class="logo">
+            <img class="logo2" src="image/photo.png" alt="2">
+            <div class="text">
+                <h1 class="s">وزارة الثقـــافة و الفنون</h1>
+                <h2 class="s">المكــتبة الرئــيسية للمطــالعة العمومية</h2>
+                <h2 class="s">المجاهد محمد عصـــامي - بــسكرة</h2>
+            </div>
+            <img class="logo1" src="image/mc.png" alt="1">
+           
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="index.php" id="a1">الصفحة الرئــيسية</a></li>
+            <li class="dropdown"><a>المكــتبة الرئــيسية</a>
+                <ul class="dropdownmenu dr1">
+                    <li><a href="تعريف المكتبة .HTML">تعريف المكــتبة</a></li>
+                    <li><a href="النظام الداخلي.html">القانون الداخلي للمكتبة</a></li>
+                    <li><a href="مخطط.html">الهيكل التنظيمي للمكتبة</a></li>
+                    <li><a href="فضاءات .html">فضاءات متنوعة للمكتبة</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="">الملحقات</a>
+                <ul class="dropdownmenu">
+                    <li><a href="عين زعطوط.html">عين زعطوط</a></li>
+                    <li><a href="bouchgron.html">بوشقرون</a></li>
+                    <li><a href="liwa.html">ليوة</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="">النشاطات</a>
+                <ul class="dropdownmenu">
+                    <li><a href="شهور السنة.html">2024</a></li>
+                    <li><a href="شهور السنة.html">2023</a></li>
+                    <li><a href="شهور السنة.html">2022</a></li>
+                </ul>
+            </li>
+                <li><a href="recharch.php">البحث في الكتب</a></li>
+                <li><a href="تسجيل.php">التسجيل والانخراط</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <a href="activite1.html" class="image-item">
+            <figure>
+                <img src="image/20.jpg" alt="Image 1">
+            </figure>
+        </a>
+        <a href="activite2.html" class="image-item">
+            <figure>
+                <img src="image/21.jpg" alt="Image 2">
+            </figure>
+        </a>
+        <a href="activite3.html" class="image-item">
+            <figure>
+                <img src="image/22.jpg" alt="Image 3">
+            </figure>
+        </a>
+    </div>
+
+ <div class="image-gallery">
+        <a href="activite1.html" class="image-item">
+            <figure>
+                <img src="image/23.jpg" alt="Image 1">
+            </figure>
+        </a>
+        <a href="activite2.html" class="image-item">
+            <figure>
+                <img src="image/24.jpg" alt="Image 2">
+            </figure>
+        </a>
+        <a href="activite3.html" class="image-item">
+            <figure>
+                <img src="image/25" alt="Image 3">
+            </figure>
+        </a>
+    </div>
+
+ <div class="image-gallery">
+        <a href="activite1.html" class="image-item">
+            <figure>
+                <img src="image/26" alt="Image 1">
+            </figure>
+        </a>
+        <a href="activite2.html" class="image-item">
+            <figure>
+                <img src="image/26.jpg" alt="Image 2">
+            </figure>
+        </a>
+        <a href="activite3.html" class="image-item">
+            <figure>
+                <img src="image/27.jpg" alt="Image 3">
+            </figure>
+        </a>
+    </div>
+
+    <footer dir="rtl">
+        <div class="contain">
+            <div class="main">
+                <div class="work">  
+                    <ul>
+                        <h3>أيام العمل</h3>
+                        <li> كل أيام الأسبوع<span>من 8:00 الى 22:00</span></li>
+    
+                    </ul>
+                </div>
+                <div class="location">
+                    <h3>مواقع تهمك</h3>
+                    
+                    <a href="https://www.m-culture.gov.dz/"> وزارة الثقافة والفنون</a>
+                    <br>
+                    <a href="https://biblionat.dz/">المكتبة الوطنية الجزائرية</a>
+                    <br>
+                     <a href="https://cartes.patrimoineculturelalgerien.org/"> المكتبة الرئيسية للمطالعة أم البواقي</a> 
+                     <br>
+                    <a href="https://pam.univ-adrar.edu.dz/">المخبر الوطني للمخطوطات</a>
+                    
+                    
+                </div>
+                <div class="about-us">
+                    <h3>تواصلو معنا على</h3>
+                    <i class="fab fa-facebook fa-2x"><a href="https://www.facebook.com/bplp.biskra.07?locale=fr_FR">Facebook</a></i>
+                    <i class="fas fa-envelope fa-2x"><a href="http://bplp.biskra.07@gmail.com">Gmail</a></i>
+                </div>
+                <div class="map-container">
+                    <h3 class="bb">موقعنا</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div>سياسة الخصوصية</div>
+        </div>
+    </footer>
+</body>
+</html>

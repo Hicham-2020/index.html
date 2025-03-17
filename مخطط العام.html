@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/gojs/release/go.js"></script>
+<style>
+    /* تنسيق الزر */
+    button {
+      background-color: #e067e0; 
+      color: white;
+      font-size: 16px;
+      padding: 15px 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease; /* تأثير الانيميشن */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* تأثير التحويم عند المرور على الزر */
+    button:hover {
+      background-color: #45a049; /* اللون عند التحويم */
+      transform: translateY(-3px); /* تأثير الانزلاق للأعلى */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* تأثير الظل عند التحويم */
+    }
+
+    /* تأثير الضغط على الزر */
+    button:active {
+      transform: translateY(2px); /* تأثير الضغط على الزر */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* تنسيق الزر في أسفل الصفحة */
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiagramDiv" style="width: 100%; height: 80vh;"></div>
+  <!-- زر الرجوع إلى الصفحة الرئيسية -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button onclick="goHome()">الرجوع </button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var $ = go.GraphObject.make;
+
+      var myDiagram =
+        $(go.Diagram, "myDiagramDiv",
+          {
+            layout: $(go.TreeLayout, { angle: 90, layerSpacing: 50 })
+          });
+
+      myDiagram.nodeTemplate =
+        $(go.Node, "Auto",
+          $(go.Shape, "Rectangle",
+            { fill: "#8EC6C5", strokeWidth: 0 },
+            new go.Binding("fill", "color")),
+          $(go.TextBlock,
+            { margin: 10, font: "bold 14px sans-serif", stroke: "white" },
+            new go.Binding("text", "name"))
+        );
+
+      myDiagram.linkTemplate =
+        $(go.Link,
+          $(go.Shape, { strokeWidth: 2, stroke: "#555" }));
+
+      myDiagram.model = new go.TreeModel([
+        { key: 1, name: "المدير المكتبة", color: "#4CAF50" },
+        { key: 2, parent: 1, name: "قسم خدمة المستعملين", color: "#2196F3" },
+        { key: 3, parent: 1, name: "قسم معالجة الرصيد و تنميته", color: "#FFC107" },
+        { key: 4, parent: 1, name: "مصلحة الادارة العامة", color: "#FF5722" },
+        { key: 5, parent: 2, name: "مصلحة تسيير الرصيد و توجيه القراء", color: "#8BC34A" },
+        { key: 6, parent: 2, name: "مصلحة التنشيط و التبادلات و الانشطة", color: "#8BC34A" },
+        { key: 7, parent: 3, name: "مصلحة الاعلام الالي و السمعي البصري", color: "#FF9800" },
+        { key: 8, parent: 3, name: "مصلحة الاقتناء", color: "#FF9800" },              
+        { key: 8, parent: 3, name: "مصلحة معالجة الرصيد و صيانته", color: "#FF9800" },
+        { key: 9, parent: 4, name: "فرع المستخدمين", color: "#E91E63" },
+        { key: 10, parent: 4, name: "فرع الميزانية و المحاسبة", color: "#E91E63" },
+        { key: 10, parent: 4, name: "فرع الوسائل العامة", color: "#E91E63" }
+      ]);
+    });
+
+    // وظيفة الرجوع إلى الصفحة الرئيسية
+    function goHome() {
+      window.location.href = "index.html"; 
+    }
+  </script>
+</body>
+</html>
+

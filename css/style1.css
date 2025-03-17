@@ -1,0 +1,249 @@
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    } 
+    .image{
+        width: 100%;
+    }
+    .nav{
+        width: auto;
+    }
+    .text{
+        width: 90%;
+    }
+}
+/* 
+    container
+    opacity hover
+    section header 
+    section padding
+    hover effect 1 
+    hover effect 2
+ */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+.home,
+.about,
+.gallery,
+.footer{
+    padding-block: 70px;
+}
+.container{
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 25px;
+}
+
+.text-h3{
+    font-size: 30px;
+    font-weight: 600;
+    color: #9f9c0d;
+    margin-left: 380px;
+}
+
+p.description {
+    direction: rtl;
+    font-size: 24px; /* Adjusts font size */
+    line-height: 1.6; /* Sets line height for better readability */
+    color: #333; /* Changes text color */
+    margin: 15px 0; /* Adds space around the paragraphs */
+    padding: 10px; /* Adds padding inside the paragraphs */
+    text-align: justify; /* Aligns text with both left and right edges */
+}
+
+.center{
+    text-align: center;
+}
+/***** header ****/
+.headre{
+    width: 100%;
+    height: 200px;
+} 
+
+.logo{ 
+    display: flex;
+    height: 160px;
+    justify-content: space-between;
+} 
+
+.logo1{
+   
+    align-items: center;
+    width: 80px;
+    height:100px; 
+    margin-left: 50px; 
+    margin-top: 10px;
+} 
+
+.logo2{
+    float: right; 
+    width:100px; 
+    height:120px;
+    margin-right: 50px;
+} 
+
+.text{ 
+    height: 120px;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+
+}
+
+.text .s{
+   font-size:30px; 
+   font-weight: 500; 
+   margin-top: 10px;
+} 
+
+.nav{
+    width: 100% ;
+    height:50px;
+     background-color: black;
+      display: flex; 
+       align-items: center;
+       direction: rtl; 
+
+} 
+.nav a{ 
+    color: #ffffff;
+     margin-left:50px;
+      text-decoration: none;
+       font-size: 20px; 
+       margin-right: 25px; 
+} 
+
+#a1{
+    margin-right: 70px;
+} 
+
+li{
+    display: inline; 
+    list-style: none;
+}
+
+main { 
+    margin-top: 10px;
+    width: 100%;
+    height: 100px; 
+    position: relative; 
+    background-size: cover; 
+} 
+
+.dropdown{
+ position: relative;
+ display: inline-block;
+}
+/* بداية التعديل */
+.dropdownmenu{
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 150px;
+    text-align: center;
+    left: 0%;
+    top: 63%;
+    margin: auto;
+    margin-top: 10px;
+   
+    z-index: 99;
+} 
+/*إضافة جديدة للكود*/
+.dr1{
+    left: 25Px;
+}
+
+.dropdownmenu a{
+    color: #ffffff;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    background-color: black;
+    margin: auto;
+} 
+
+.dropdown:hover .dropdownmenu{ 
+    display: block;
+
+}  
+    
+/************** section home**********/
+
+
+.home .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.right-content{
+
+
+}
+
+.left-content{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.img img{
+    width: 100%;
+    /* float: right; */
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/*********** section about *******/
+.about .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.about-left{
+    height: 500px; 
+    margin-right: 100px;
+}
+.about-left img{
+    width:100%;
+    height: auto;
+    padding: 10px;
+    border-top-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+.imge img{
+    width: 100%;
+    /* float: right; */
+    height: auto;
+    padding: 10px;
+    border-radius:200px;
+
+
+} 
+
+
+.title{
+    margin-top: 70px;
+    text-align: center;
+    height: 30px;
+    color:brown;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+
+
+

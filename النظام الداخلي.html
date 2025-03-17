@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('images.jfif');
+        }
+
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        nav {
+            background-color: #000000; /* لون الناف بار الأسود */
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #000000; /* لون القائمة المنسدلة الأسود */
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                transition: all 0.5s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        nav ul li a {
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ffcc00;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #000000; /* لون الفوتر الأسود */
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        footer .footer-section {
+            margin: 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Social media icons */
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        /* Copyright section */
+        footer .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid white;
+        }
+  h1{
+font-weight: bold;
+ color: red;
+
+}
+.paragraph4 {
+    width: 100%; /* La div prend automatiquement la largeur nécessaire */
+    display: flex; /* Utilisation du flexbox pour organiser le contenu en ligne */
+    
+}
+
+
+.prh4 {
+    width: 100%; /* Le paragraphe occupe 60% de la div */
+    text-align: justify; /* Justifie le texte pour un meilleur alignement */
+margin-right: 80px;
+ font-size: 24px;
+
+}
+
+.vide-after {
+    width: 16%; 
+}
+h3 {
+    text-align: right;
+    margin-right: 80px;
+ color: red;
+    
+}
+.pp{
+    margin-right: 130px;
+}
+.ppp{
+    margin-right: 80px;
+}
+
+p{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+} 
+footer h2 {
+    color: red;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body dir="rtl">
+
+    <!-- Main Container -->
+    <div id="main" class="container mt-3">
+        <div class="d-flex align-items-center">
+            <img class="im" src="mc.png" style="width: 80px; height: 100px; margin-top: 10px;">
+        </div>
+        <div class="text-center flex-grow-1">
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">وزارة الثقـــافة و الفنون</div>
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">المكــتبة الرئــيسية للمطــالعة العمومية</div>
+            <div style="font-size: 30px; font-family: Arial, Helvetica, sans-serif">المجاهد محمد عصـــامي - بــسكرة</div>
+        </div>
+        <div class="d-flex align-items-center">
+            <img class="im" src="bplp.png" style="width: 120px; height: 120px;">
+        </div>
+    </div>
+
+    <!-- شريط التنقل الجديد -->
+   <nav>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <ul id="nav-links">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="تعريف المكتبة  .html">تعريف للمكتبة</a>
+                                 <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
+                    <a class="dropdown-item" href="فضاءات المكتبة.html">فضاءات المكتبة</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">ملحقات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="bouchgron.html">بوشقرون</a>
+                    <a class="dropdown-item" href="mkhadma.html">مخادمة</a>
+                    <a class="dropdown-item" href="#">عين الناقه</a>
+                    <a class="dropdown-item" href="عين زعطوط.html">عين زعطوط</a>
+                    <a class="dropdown-item" href="liwa.html">لـيوة</a>
+                    <a class="dropdown-item" href="#">الحاجب</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">نشاطات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="نشاطات 2024.html">2024</a>
+                                    </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="http://192.168.1.26/test/OPAC.php">البحث البلبيوغرافي</a>
+              </li>
+        </ul>
+    </nav>
+
+      
+
+
+</br></br>
+<center><h1 >النظـــام الـــداخلـــــي للمكتبــــــــة</h1></center>
+</br></br>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">
+        يهدف هذا النظام إلى ضبط القواعد المتعلقة بتسيير
+                     مكتبة المطالعة العمومية لولاية بسكرة وتحديد الأحكام 
+                    التي تطبق على رواد المكتبة ، وحقوق و التزامات كل طرف حيث تسرى أحكام هدا النظام على كل مستفيد من طلبة ، اساتذة 
+      باحثين و تلاميذ مدارس و كل الفئات الاجتماعية التي لها علاقة بالمكتبة
+    </p>
+    <div class="vide-after"></div>
+</div>
+
+ <h3 >الباب الأول: التعريف بالمكتبة و أقسام و أهدافها:</h3> 
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">
+        المادة 1 : مكتبة المطالعة العمومية لولاية بسكرة، مكتبة عامة تطبق التقانين العلمية في معالجة أرصدتها الفكرية: 
+                    فهي تطبق تصنيف ديوي    العشري في تصنيف العلوم و التخصصات الموجودة  ضمن رصيدها .
+
+    </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">
+        
+                   المادة 2: عملا المادة 5 من المرسوم التنفيذي رقم 07-275 المؤرخ في 18 سيبتمبر2007،تقوم مكتبة المطالعة العمومية بإنجاز المهام التالية:
+    </p>
+    <div class="vide-after"></div>
+</div>
+<p class="pp">* توفير الكتاب بمختلف دعائمه لترقية المطالعة العمومية و تشجيعها.</p>
+<p class="pp">* وضع الأرصدة الوثائقية تحت تصرف المستعملين.</p>
+<p class="pp">* وضع خدمات مكتبة المطالعة العمومية تحت تصرف كل شريحة اجتماعية.</p>
+<p class="pp"> * تخصيص فضاء ملائم لاحتياجات الطفل لتشجيع إبداعه. </p> 
+ <p class="pp">* توفير فضاء للدراسات و تحضير الامتحانات. </p>
+ <p class="pp">* تسهيل تطور الكفاءات القاعدية لاستعمال الإعلام و الإعلام الآلي. </p> 
+ <p class="pp">* توفير الوسائل التي تسمح لأشخاص المعاقين بالمطالعة العمومية </p> 
+ <p class="pp">* توفير الوسائل التي تسمح لأشخاص المعاقين بالمطالعة العمومية. </p>
+ <p class="ppp">بالإضافة إلى العمل على ترقية الأفاق المعرفية و الثقافية من خلال بعض النشاطات.</p>
+ <h3 >الباب الثاني: الانخراط بالمكتبة و الدخول إليها:</h3> 
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">  المادة 3 : للانخراط بالمكتبة يجب تكوين الملف التالي. </p>
+    <div class="vide-after"></div>
+</div>
+
+<p class="pp">* صورتين شمسيتين.</p>
+<p class="pp">* نسخة من بطاقة التعريف الوطنية أو ر.س أو ج.س.</p>
+<p class="pp">* استمارة المعلومات.</p>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">  المادة 4 : بطاقة الانخراط تعد بطاقة شخصية صالحة لمدة سنة واحدة فقط. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">  المادة 5: المكتبة مفتوحة على مدار أيام الأسبوع ما عدا أيام العطلة الرسمية و ذلك من الساعة 80:00 صباحا إلى غاية الساعة 17:00 مساء،و يوم الجمعة من الساعة08:00 إلى غاية 12:00؛ويتم تمديد ساعات عملها بعد فصل الشتاء إلى غاية الساعة 19:00 مساء . </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4"> المادة 6: لا يسمح لرواد المكتبة دخول الفضاءات الغير مخصصة لهم. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 7: فضاء الأطفال مخصص لتوجيه و التثقيف وليس للاحتفاظ بالأطفال. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 8: الأطفال دون سن التمدرس  يجب أن يكونوا تحت مسؤولية أوليائهم داخل فضاء المكتبة. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 9: يجب إظهاربطاقة المكتبة و بطاقة التعريف عند الدخول. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 10: لا يسمح بالزيارات غير مرخص لها من طرف الولاية ،أو التي لم تحصل على إذن و موافقة مدير المكتبة مهما كان المبرر و طبيعة الزيارة. </p>
+    <div class="vide-after"></div>
+</div>
+<h3 >الباب الثالث: الإعارة و المطالعة:</h3>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 11: يجب تقديم بطاقة الانخراط مع كل عملية إعارة. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 12:تتم عملية المطالعة و الإعارة في المكتبة كالأتي: </p>
+    <div class="vide-after"></div>
+</div>
+ <p class="pp"> أ - مطالعة داخلية: تسمح للمستفيد بالاطلاع على المراجع داخل قاعة المطالعة على أن لا يتعدى عدد المراجع المتصفحة ثلاث نسخ دفعة واحدة . </p>
+ <p class="pp"> ب - إعارة خارجية: يسمح باستعارة ثلاث 03 مراجع لمدة 15 يوم قابلة لتجديد مرة واحدة . </p>
+
+ <div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 13: يمكن للمنخرطين تقديم طلب حجز الوثائق الموجهة للإعارة على أن لا تتجاوز مرجعين على الأكثر. </p>
+    <div class="vide-after"></div>
+</div>
+ <div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 14: تستثنى القواميس و النسخ النادرة أو المحدودة أو المطلوبة بكثرة من الإعارة الخارجية. </p>
+    <div class="vide-after"></div>
+</div>
+
+ <div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">لمادة 15: لضمان السير الحسن للإعارة يجب على المنخرطين التقيد بما يلي:. </p>
+    <div class="vide-after"></div>
+</div>
+<p class="pp"> * احترام مواقيت الإعارة و الإرجاع، وهذا بإتباع البرنامج المعلن عليه عند مدخل المكتبة .  </p>
+<p class="pp"> * إظهار بطاقة المكتبة و بطاقة التعريف عند الإعارة.  </p>
+<p class="pp"> * تفادي الازدحام ، و تجنب إحداث الطوابير أمام بنك الإعارة و ذلك بالتزام الأماكن المخصصة لأنظار   </p>
+<p class="pp"> * وجوب حضور صاحب البطاقة وعدم إرسال من يقوم بالإعارة بدلا عنه ، و في حالة إضاعتها يتقدم المعني إلى إدارة المكتبة بطلب إعادتها ،  </p>
+<p class="pp"> ولا تسلم النسخة الثانية إلا بعد مضي مدة أدناها أسبوع و أقصاها شهر ولا تجدد إلا مرة واحدة . </p>
+<p class="pp"> *عند إرجاع المراجع تتم عملية التأكيد من سلامتها من التمزق و التشويه و غير ذالك  
+.  </p>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 16: تعد قاعة المطالعة مكانا لمراجعة الدروس و إنجاز البحوث و المطالعة و لضمان هذا يجب التقيد بالاتي : </p>
+    <div class="vide-after"></div>
+</div>
+<p class="pp"> * الهدوء التام و المطالعة بصورة فردية ، و تفادي العمل الجماعي و المناقشات التي تؤدي إلى إحداث الفوضى و الضجيج داخل القاعة . </p>
+<p class="pp"> * عدم وضع المعاطف و المظلات و ما شابه ذلك فوق الطاولات . </p>
+<p class="pp"> * عدم إحضار المأكولات أو المشروبات أو الجرائد إلى القاعة ، و كذالك عدم التدخين. </p>
+<p class="pp"> * إيقافالجوال أو وضعه على الصامت فور دخول القاعة و تفادي استعمال أي جهاز يشوش على الغير. </p>
+<p class="pp"> * لا يسمح إلا بتصفح ثلاثة كتب دفعة واحدة . </p>
+<p class="pp"> * تجنب الاتكاء على الكتب و الكتابة عليها ووضعها على بعض مفتوحة ، و يجب تصفحها بعناية ، و إرجاعها إلى أماكنها بالوضعية العمودية . </p>
+
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 17: يوجد مشرف على القاعة ، فعلى الطلبة إتباع تعليماته و الرجوع إليه للاستعلام أو التوجيه أو الطلب أي خدمة . </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 18: المستعير ملزم بإرجاع في صورتها الأصلية و في حالة الضياع أو الإتلاف عليه توفير المرجع في نسخة جديدة (نفس العنوان) و عند ندرتها عند الناشرين تعوض من نفس الصنف ضمن قائمة عناوين تقترح من طرف الإدارة. </p>
+    <div class="vide-after"></div>
+</div>
+<h3 >الباب الرابع : قاعة الأنترنات و الإعلام الآلي</h3>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 19: تخضع عملية استعمال الأنترنات إلى مبدأ احترام القواعد المعمول بها في المكتبة . </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 20: الاستفادة من خدمات الانترنت مسموح بها لأشخاص المنخرطين بالمكتبة . </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 21: يخضع قبول الفئات دون سن 14 إلى ترخيص أبوي. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 22: يسمح باستعمال وسائل الإعلام الآلي الموضوعة في خدمة المنخرطين باستعمال وسائل الاتصال المتعددة كالبرامج المكتبية و البحث عن طريق الأنترنات. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 23: كل وسائل الإعلام الآلي المرتبطة بوسائل الطبع تحدد أسعارها من قبل المكتبة لاحقا . </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 24: الحجم الساعي اليومي للفرد الواحد لا يتجاوز 60 دقيقة. </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 25: يمنع على مستعملي القاعة استعمال الانترنت في غرض غير البحث العلمي و الثقافي كما يمنع تواجد أكثر من شخصين أمام كل حاسوب . </p>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+    <p class="prh4">المادة 26: يسمح باستخدام الوسائل التالية : </p>
+    <div class="vide-after"></div>
+</div>
+<p class="pp"> * استعمال الأقراص المضغوطة . </p>
+<p class="pp"> *استعمال WAB  MAILS*  حيث ، يسمح بالرسائل الإلكترونية الخاصة و ترجع مسؤولية هذه العملية للمستعملين . </p>
+<p class="pp"> * تسجيل المعطيات في وسائط الحفظ . </p>
+<p class="pp"> * تحويل المعطيات من وسائط الحفظ تجاه الانترنت . </p>
+
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">يمنع استعمال الوسائل التالية : </P>
+    <div class="vide-after"></div>
+</div>
+<p class="pp"> * تسجيل المعطيات في القرص الصلب الخاص بالحاسوب . </p>
+<p class="pp"> *تسجيل و تحويل المعطيات المتعارضة مع خدمة المرفق العام و القوانين الجزائرية . </p>
+<p class="pp"> * تحميل الملفات بموجب قانوني الملكية مهما كان نوع(نص ، صورة ، صوت......) . </p>
+<p class="pp">* إرسال المراسلات التلقائية .</p>
+<p class="pp">*الألعاب على الشبكة .</p>
+<p class="pp">* تحويل في البرنامج FTP</p>
+<p class="pp">* يمنع كل تعديل أو تحويل في المساحة المخصصة على شبكة الانترنت.</p>
+<p class="pp">*كل حاسوب مدعم بجهاز مراقبة لكشف كيفية البحث في الشبكة .</p>
+
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 27: لأجل السير الحسن و التنظيم الجيد للقاعة ينطبق عليها كل ما تم ذكره سابقا في المادة السابعة عشر و الثامن عشر (17-18) بالنسبة لتنظيم قاعة المطالعة . </P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 28: تستقبل المكتبة الأطفال دون سن التمدرس مرفقين بأوليائهم في أوقات محددة و معلن عنها. </P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 29: ينتمي الأطفال دون سن التمدرس إلى مجموعات حسب السن(من 3 إلى 4 سنوات ) و( من 5 إلى 6 سنوات) .</P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 30 : لا يتعدى الوقت المخصص للأطفال دون سن التمدرس الساعة ونصف متتالية .</P>
+    <div class="vide-after"></div>
+</div>
+
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 31: الأطفال المتمدرسون يستقبلون مرتين إلى ثلاث في الأسبوع لمدة ساعتين لكل حصة.</P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 32: تخصص المكتبة أنشطة و برامج إضافية خاصة بالفئات ذوي الاحتياجات الخاصة.</P>
+    <div class="vide-after"></div>
+</div>
+<h3 >الباب السادس : ورشة التحكم في اللغات</h3>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 33: توفير المكتبة على ورشتين للتكوين في ما يلي :</P>
+    <div class="vide-after"></div>
+</div>
+<p class="pp"> *  التحكم في اللغات الأجنبية (الفرنسية - الانجليزية). </p>
+<p class="pp"> *  التحكم في استخدامات الإعلام الآلي و لانترنت. </p>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 34 : الحجم الساعي لايتجاوز 3 ساعات في الأسبوع مقسمة إلى حصتين.</P>
+    <div class="vide-after"></div>
+</div>
+
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 35: تحديد القيم المالية للتسجيل السنوي من طرف الإدارة و يعلن عنها .</P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">لمادة 36:  على كل مسجل الالتزام بالمجموعة التي ينتمي إليها و توقيتها . </P>
+    <div class="vide-after"></div>
+</div>
+<h3 >الباب السابع : المخالفات و العقوبات</h3>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 37: كل مستفيد لم يحترم النظام الداخلي أو يخل به يتعرض لتدابير عقابية محددة حسب درجة المخالفة المرتكبة .</P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 38: يعتبر عدم احترام موظفي المكتبة و إهانتهم ورفض تعليماتهم إخلالا بالنظام الداخلي يعرض صاحبه للعقوبات التالية : </P>
+    <div class="vide-after"></div>
+</div>
+<p class="pp">* توجيه إنذار أو توبيخ كتابي.</p>
+<p class="pp">* سحب البطاقة مع الطرد من المكتبة لمدة محددة .</p>
+<p class="pp">* السحب الكلي للبطاقة و الشطب من قائمة المستفيدين .</p>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 39: يتعرض المستعير للكتب عند تجاوز المدة القانونية للإرجاع لعقوبات يحددها برنامج الإعارة، وه\ه العقوبة آلية و نهائية يعود إعادة النظر فيها إلى السلطة التقديرية. </P>
+    <div class="vide-after"></div>
+</div>
+<h3 >الباب الثامن : أحكام ختامية</h3>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 40: يجب على الجميع من طلبة وعمال و مستفيدين احترام بنود هذا النظام و التقيد بأحكامه من أجل السير الحسن للمكتبة . </P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 41: يكلف مدير المكتب بالسهر على تطبيق هذا النظام و احترامه. </P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 42: يمكن تعديل بنود و مواد هذا النظام كلما استدعت الضرورة ذلك ، عند حدوث المستجدات أو تغير المعطيات مع مراعاة القاعدة القانونية. </P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 43:تسري أحكام هذا النظام بداية من تاريخ المصادقة عليه من طرف وزارة الثقافة . </P>
+    <div class="vide-after"></div>
+</div>
+<div class="paragraph4">
+    <div class="vide-before"></div>
+  <p class="prh4">المادة 44: ينشر هذا النظام الداخلي على مستوى المكتبة و تسليم نسخ منه للمنخرطين.</P>
+    <div class="vide-after"></div>
+</div>
+
+</br></br>
+
+
+
+
+
+
+  <footer>
+        <div class="footer-content container">
+            <!-- First Section: Contact Info -->
+            <div class="footer-section">
+                <h2>معلومات الاتصال</h2>
+                <ul>
+                    <li>العنوان: شارع ............... بسكرة</li>
+                    <li>الهاتف: 033.55.46.42 </li>
+                     <li>الهاتف: 033.55.46.20 </li>
+                    <li>البريد الإلكتروني: info@library.com</li>
+                </ul>
+            </div>
+
+
+            <!-- Second Section: Quick Links -->
+            <div class="footer-section">
+                <h2>مواقع مهمة</h2>
+                <ul>
+                    <li><a href="#">وزارة الثقافة و الفنون </a></li>
+                    <li><a href="#">المكتبة الوطنية</a></li>
+                    <li><a href="#">...........</a></li>
+                    <li><a href="#">............</a></li>
+                </ul>
+            </div>
+
+            <!-- Third Section: Follow Us -->
+            <div class="footer-section">
+                <h2>تابعنا</h2>
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2024 جميع الحقوق محفوظة | مكتبة المجاهد محمد عصـــامي
+        </div>
+    </footer>
+
+
+
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
