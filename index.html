@@ -18,7 +18,8 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('images.jfif');
+             overflow-x: hidden;
+         background-image: url('images.jfif');
 
         }
 
@@ -239,11 +240,23 @@ margin-left: 2%;
     width: 100%;
     -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
   }
+.statistics-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .single-ststistics {
-    display: flex;
-    justify-content: space-around; /* توزيع العناصر بالتساوي */
-    align-items: center; /* لضمان التوسيط العمودي */
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap; /* ضروري لتفادي الخروج عن الإطار في الشاشات الصغيرة */
+}
+
+.footer-item {
+  text-align: center;
+  margin: 10px;
 }
 
 .footer-item {
@@ -365,8 +378,8 @@ font-weight: bold;
             <li class="nav-item active">
                 <a class="nav-link" href="http://localhost/site%20web/opac.php">البحث البلبيوغرافي</a>
               </li>
-               <li class="nav-item active">
-                <a class="nav-link" href="انخراط.html">الانخراط </a>
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost/site%20web/opac.php">الانخراط </a>
               </li>
 
         </ul>
@@ -444,22 +457,24 @@ font-weight: bold;
 </br></br>
 <center><h2 >إحصائيات بيبليوغرافية عامة</h2></center>
 
-<div class="single-ststistics">
+<div class="statistics-wrapper">
+  <div class="single-ststistics">
     <div class="footer-item">
-        <img src="photo_page_gard/نسخ.png" alt="عدد النسخ" width="130" height="130">
-        <h3  style="font-weight: bold;">عدد النسخ</h3>
-        <h3 id="counter1">0</h3> <!-- أضف معرف فريد (id) للعداد -->
+      <img src="photo_page_gard/نسخ.png" alt="عدد النسخ" width="130" height="130">
+      <h3 style="font-weight: bold;">عدد النسخ</h3>
+      <h3 id="counter1">0</h3>
     </div>
     <div class="footer-item">
-        <img src="photo_page_gard/مسجلين.png" alt="عدد المنخرطين" width="150" height="150">
-        <h3  style="font-weight: bold;">عدد المنخرطين</h3>
-        <h3 id="counter2">0</h3> <!-- أضف معرف فريد (id) للعداد -->
+      <img src="photo_page_gard/مسجلين.png" alt="عدد المنخرطين" width="150" height="150">
+      <h3 style="font-weight: bold;">عدد المنخرطين</h3>
+      <h3 id="counter2">0</h3>
     </div>
     <div class="footer-item">
-        <img src="photo_page_gard/عناوين.png" alt="عدد العناوين" width="200" height="200">
-        <h3  style="font-weight: bold;">عدد العناوين</h3>
-        <h3 id="counter3">0</h3> <!-- أضف معرف فريد (id) للعداد -->
+      <img src="photo_page_gard/عناوين.png" alt="عدد العناوين" width="200" height="200">
+      <h3 style="font-weight: bold;">عدد العناوين</h3>
+      <h3 id="counter3">0</h3>
     </div>
+  </div>
 </div>
 
 
@@ -517,6 +532,8 @@ font-weight: bold;
             navLinks.classList.toggle('show');
         }
     </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
@@ -563,5 +580,57 @@ document.addEventListener("DOMContentLoaded", function() {
     animateCounter("counter3", 0, 17281, 10000);  
 });
 </script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('nav-links');
+    menu.classList.toggle('show');
+  }
+</script>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("show");
+  }
+  
+  // جعل القوائم المنسدلة تفتح عند الضغط
+  document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll("nav .nav-item");
+  
+    dropdowns.forEach(item => {
+      const link = item.querySelector(".nav-link");
+      const menu = item.querySelector(".dropdown-menu");
+  
+      if(menu) {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          // إغلاق القوائم الأخرى
+          dropdowns.forEach(other => {
+            if (other !== item && other.querySelector(".dropdown-menu")) {
+              other.querySelector(".dropdown-menu").style.display = "none";
+            }
+          });
+          // التبديل بين العرض والإخفاء
+          menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        });
+      }
+    });
+  
+    // إغلاق القوائم عند النقر خارجها
+    document.addEventListener("click", function(e) {
+      if (!e.target.closest("nav")) {
+        document.querySelectorAll(".dropdown-menu").forEach(menu => {
+          menu.style.display = "none";
+        });
+      }
+    });
+  });
+  </script>
+  
+
+
 </body>
 </html>
+
+  
+   
+    
