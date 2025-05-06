@@ -6,8 +6,9 @@
     <title>مكتبة</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         * {
@@ -18,9 +19,8 @@
 
         body {
             font-family: 'Arial', sans-serif;
-             overflow-x: hidden;
-         background-image: url('images.jfif');
-
+            overflow-x: hidden;
+            background-image: url('images.jfif');
         }
 
         #main {
@@ -31,7 +31,7 @@
         }
 
         nav {
-            background-color: #000000; /* لون الناف بار الأسود */
+            background-color: #000000;
             height: 60px;
             width: 100%;
             display: flex;
@@ -71,7 +71,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #000000; /* لون القائمة المنسدلة الأسود */
+            background-color: #000000;
             padding: 10px 0;
             z-index: 1;
         }
@@ -184,7 +184,6 @@
             color: #ffcc00;
         }
 
-        /* Social media icons */
         .social-icons a {
             color: white;
             margin: 0 10px;
@@ -196,152 +195,281 @@
             color: #ffcc00;
         }
 
-        /* Copyright section */
         footer .footer-bottom {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid white;
         }
 
-        /* New section after the navbar */
         #image-section {
             width: 100%;
-    height: 500px;
-    background-image: url('photo_page_gard/Design sans titre.png'); 
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+            height: 500px;
+            background-image: url('photo_page_gard/Design sans titre.png'); 
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
 
+        h1 {
+            color: #fff;
+            font-size: 55px;
+            margin: 80px 0;
+        }
 
-h1{
-    color: #fff;
-    font-size: 55px;
-    margin: 80px 0;
-}
-.swiper {
-    width: 50%;
-    height: 50%;
-  margin-top: 240px;
-margin-left: 2%;
-  }
+        .swiper {
+            width: 50%;
+            height: 50%;
+            margin-top: 240px;
+            margin-left: 2%;
+        }
 
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 250px;
-  }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 250px;
+        }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
-  }
-.statistics-wrapper {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
+        }
 
-.single-ststistics {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 20px;
-  flex-wrap: wrap; /* ضروري لتفادي الخروج عن الإطار في الشاشات الصغيرة */
-}
+        .statistics-wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-.footer-item {
-  text-align: center;
-  margin: 10px;
-}
+        .single-ststistics {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
 
-.footer-item {
-    text-align: center;
-    margin: 0 20px; /* إضافة تباعد بين العناصر */
-}
-h2 {
-    font-size: 35px;
-font-weight: bold;
- color: red;
+        .footer-item {
+            text-align: center;
+            margin: 10px;
+        }
 
-}
+        .footer-item {
+            text-align: center;
+            margin: 0 20px;
+        }
 
-.image-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
+        h2 {
+            font-size: 35px;
+            font-weight: bold;
+            color: red;
+        }
 
-.image-container {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
-}
+        /* بداية التعديلات لجعل القسم متجاوبًا */
+        .image-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 15px;
+            margin: 30px 0;
+        }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 2px solid black;
-  padding: 2px;
-  transition: transform 0.3s ease;
-}
+        .image-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
 
-/* حركة التكبير عند تمرير الفأرة */
-.image-container:hover img {
-  transform: scale(1.1);
-}
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 2px solid black;
+            padding: 2px;
+            transition: transform 0.3s ease;
+        }
 
-.comment {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  font-size: 16px;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(100%);
-  text-decoration: none; /* إزالة الخط السفلي للرابط */
-}
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
 
-.image-container:hover .comment {
-  opacity: 1;
-  transform: translateY(0);
-}
+        .comment {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(100%);
+            text-decoration: none;
+        }
 
-/* عند تمرير الفأرة على التعليق، يمكنك أيضاً تغيير شكله قليلاً */
-.comment:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
+        .image-container:hover .comment {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
+        .comment:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* تعديلات للشاشات المتوسطة */
+        @media (max-width: 900px) {
+            .image-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .swiper {
+                width: 70%;
+                margin-top: 180px;
+            }
+            
+            h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* تعديلات للشاشات الصغيرة (أجهزة لوحية) */
+        @media (max-width: 768px) {
+            .image-row {
+                gap: 15px;
+            }
+            
+            .image-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .comment {
+                font-size: 14px;
+                padding: 8px;
+            }
+            
+            .swiper {
+                width: 80%;
+                margin-top: 150px;
+            }
+            
+            #image-section {
+                height: 400px;
+            }
+        }
+
+        /* تعديلات للهواتف المحمولة */
+        @media (max-width: 576px) {
+            .image-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            
+            .image-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .swiper {
+                width: 90%;
+                margin-top: 120px;
+            }
+            
+            #image-section {
+                height: 350px;
+            }
+            
+            .footer-section {
+                margin: 10px;
+                width: 100%;
+            }
+        }
+
+        /* تعديلات للهواتف الصغيرة جدًا */
+        @media (max-width: 400px) {
+            .image-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .comment {
+                font-size: 13px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .swiper {
+                margin-top: 100px;
+            }
+            
+            #image-section {
+                height: 300px;
+            }
+        }
+logo-container {
+            text-align: center; /* توسيط الصورة */
+            padding: 10px 0;
+            margin-bottom: 15px;
+        }
+        
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            transition: all 0.3s ease;
+        }
+        
+        /* تعديلات للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .logo-container img {
+                max-height: 70px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-container img {
+                max-height: 60px;
+            }
+            
+            #main {
+                margin-top: 10px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-container img {
+                max-height: 50px;
+            }
+        
     </style>
 </head>
 <body dir="rtl">
 
     <!-- Main Container -->
     <div id="main" class="container mt-3">
-        <div class="d-flex align-items-center">
-            <img class="im" src="bplp.png" style="width: 80px; height: 100px; margin-top: 10px;">
+       <div class="logo-container">
+    <img class="img-fluid" src="01.png" alt="شعار المكتبة">
+</div>
+                  
+    </div>
 
-              <div class="text-center flex-grow-1">
-            <div style="font-size: 26px;font-weight: bold; font-family: Arial, Helvetica, sans-serif">وزارة الثقـافة و الفنون</div>
-            <div style="font-size: 26px;font-weight: bold; font-family: Arial, Helvetica, sans-serif">المكـتبة الرئــيسية للمطالعة العمومية</div>
-            <div style="font-size: 26px;font-weight: bold; font-family: Arial, Helvetica, sans-serif">المجاهد محمد عصامي - بــسكرة</div>
-        </div>
-
-        </div>
-                    </div>
-
-    <!------- -->
     <nav>
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         <ul id="nav-links">
@@ -353,7 +481,7 @@ font-weight: bold;
                 <a class="nav-link" href="index.html">المكــتبة الرئــيسية</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="تعريف المكتبة  .html">تعريف للمكتبة</a>
-                                 <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
+                    <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
                     <a class="dropdown-item" href="فضاءات المكتبة.html">فضاءات المكتبة</a>
                 </div>
             </li>
@@ -372,106 +500,102 @@ font-weight: bold;
                 <a class="nav-link" href="index.html">نشاطات المكــتبة الرئــيسية</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="نشاطات 2024.html">2024</a>
-                                    </div>
+                </div>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="http://localhost/site%20web/opac.php">البحث البلبيوغرافي</a>
-              </li>
+            </li>
         </ul>
     </nav>
 
     <!-- قسم الصورة بعد الناف بار -->
-    <div id="image-section"  dir="rtl" >
+    <div id="image-section" dir="rtl">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/3.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/5.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/6.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/7.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/8.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/3.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="photo_page_gard/5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="photo_page_gard/1.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/2.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/3.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/4.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/5.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/6.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/7.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/8.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/1.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/2.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/3.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/4.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="photo_page_gard/5.jpg" alt="">
-      </div>
-
-      <!--  -->
+    <br><br>
+    <center><h2>أخر نشاطات المكتبة</h2></center>
+    <br><br>
     
+    <div class="image-row">
+        <div class="image-container">
+            <img src="photo_page_gard/4.jpg" alt="نشاط 1">
+            <a href="page1.html" class="comment">نشاط 1: عرض ثقافي في المكتبة</a>
+        </div>
+        <div class="image-container">
+            <img src="photo_page_gard/5.jpg" alt="نشاط 2">
+            <a href="page2.html" class="comment">نشاط 2: ورشة كتابة</a>
+        </div>
+        <div class="image-container">
+            <img src="photo_page_gard/6.jpg" alt="نشاط 3">
+            <a href="page3.html" class="comment">نشاط 3: جلسة قراءة للأطفال</a>
+        </div>
     </div>
-  </div>
-</div>
 
-</br></br>
-<center><h2 >أخر نشاطات المكتبة</h2></center>
-</br></br>
-<div class="image-row">
-  <div class="image-container">
-    <img src="photo_page_gard/4.jpg" alt="نشاط 1">
-    <a href="page1.html" class="comment">نشاط 1: عرض ثقافي في المكتبة</a>
-  </div>
-  <div class="image-container">
-    <img src="photo_page_gard/5.jpg" alt="نشاط 2">
-    <a href="page2.html" class="comment">نشاط 2: ورشة كتابة</a>
-  </div>
-  <div class="image-container">
-    <img src="photo_page_gard/6.jpg" alt="نشاط 3">
-    <a href="page3.html" class="comment">نشاط 3: جلسة قراءة للأطفال</a>
-  </div>
-</div>
+    <br><br>
+    <center><h2>إحصائيات بيبليوغرافية عامة</h2></center>
 
-</br></br>
-<center><h2 >إحصائيات بيبليوغرافية عامة</h2></center>
-
-<div class="statistics-wrapper">
-  <div class="single-ststistics">
-    <div class="footer-item">
-      <img src="photo_page_gard/نسخ.png" alt="عدد النسخ" width="130" height="130">
-      <h3 style="font-weight: bold;">عدد النسخ</h3>
-      <h3 id="counter1">0</h3>
+    <div class="statistics-wrapper">
+        <div class="single-ststistics">
+            <div class="footer-item">
+                <img src="photo_page_gard/نسخ.png" alt="عدد النسخ" width="130" height="130">
+                <h3 style="font-weight: bold;">عدد النسخ</h3>
+                <h3 id="counter1">0</h3>
+            </div>
+            <div class="footer-item">
+                <img src="photo_page_gard/مسجلين.png" alt="عدد المنخرطين" width="150" height="150">
+                <h3 style="font-weight: bold;">عدد المنخرطين</h3>
+                <h3 id="counter2">0</h3>
+            </div>
+            <div class="footer-item">
+                <img src="photo_page_gard/عناوين.png" alt="عدد العناوين" width="200" height="200">
+                <h3 style="font-weight: bold;">عدد العناوين</h3>
+                <h3 id="counter3">0</h3>
+            </div>
+        </div>
     </div>
-    <div class="footer-item">
-      <img src="photo_page_gard/مسجلين.png" alt="عدد المنخرطين" width="150" height="150">
-      <h3 style="font-weight: bold;">عدد المنخرطين</h3>
-      <h3 id="counter2">0</h3>
-    </div>
-    <div class="footer-item">
-      <img src="photo_page_gard/عناوين.png" alt="عدد العناوين" width="200" height="200">
-      <h3 style="font-weight: bold;">عدد العناوين</h3>
-      <h3 id="counter3">0</h3>
-    </div>
-  </div>
-</div>
-
 
     <footer>
         <div class="footer-content container">
@@ -481,11 +605,10 @@ font-weight: bold;
                 <ul>
                     <li>العنوان: شارع ............... بسكرة</li>
                     <li>الهاتف: 033.55.46.42 </li>
-                     <li>الهاتف: 033.55.46.20 </li>
+                    <li>الهاتف: 033.55.46.20 </li>
                     <li>البريد الإلكتروني: info@library.com</li>
                 </ul>
             </div>
-
 
             <!-- Second Section: Quick Links -->
             <div class="footer-section">
@@ -501,7 +624,7 @@ font-weight: bold;
             <!-- Third Section: Follow Us -->
             <div class="footer-section">
                 <h2>تابعنا</h2>
-                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -517,111 +640,92 @@ font-weight: bold;
         </div>
     </footer>
 
-    <!-- Font Awesome for Social Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
     <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
     <script>
         function toggleMenu() {
             const navLinks = document.getElementById('nav-links');
             navLinks.classList.toggle('show');
         }
-    </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 15,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000, 
+                disableOnInteraction: false,
+            },
+        });
 
-    <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>
-  <!-- Initialize Swiper -->
- var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-        rotate: 15,
-        stretch: 0,
-        depth: 300,
-        modifier: 1,
-        slideShadows: true,
-    },
-    loop: true,
-    autoplay: {
-        delay: 3000, 
-        disableOnInteraction: false,
-    },
-});
-
-  </script>
-<script>
-function animateCounter(id, start, end, duration) {
-    let current = start;
-    const increment = end > start ? 1 : -1;
-    const stepTime = Math.abs(Math.floor(duration / (end - start)));
-    
-    const timer = setInterval(function() {
-        current += increment;
-        document.getElementById(id).textContent = current;
-        if (current === end) {
-            clearInterval(timer);
+        function animateCounter(id, start, end, duration) {
+            let current = start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / (end - start)));
+            
+            const timer = setInterval(function() {
+                current += increment;
+                document.getElementById(id).textContent = current;
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
         }
-    }, stepTime);
-}
 
-// استدعاء دالة العداد لكل عنصر
-document.addEventListener("DOMContentLoaded", function() {
-    animateCounter("counter1", 0, 46878, 10000); 
-    animateCounter("counter2", 0, 1511, 10000);  
-    animateCounter("counter3", 0, 17281, 10000);  
-});
-</script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('nav-links');
-    menu.classList.toggle('show');
-  }
-</script>
-
-<script>
-  function toggleMenu() {
-    document.getElementById("nav-links").classList.toggle("show");
-  }
-  
-  // جعل القوائم المنسدلة تفتح عند الضغط
-  document.addEventListener("DOMContentLoaded", function() {
-    const dropdowns = document.querySelectorAll("nav .nav-item");
-  
-    dropdowns.forEach(item => {
-      const link = item.querySelector(".nav-link");
-      const menu = item.querySelector(".dropdown-menu");
-  
-      if(menu) {
-        link.addEventListener("click", function(e) {
-          e.preventDefault();
-          // إغلاق القوائم الأخرى
-          dropdowns.forEach(other => {
-            if (other !== item && other.querySelector(".dropdown-menu")) {
-              other.querySelector(".dropdown-menu").style.display = "none";
-            }
-          });
-          // التبديل بين العرض والإخفاء
-          menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        // استدعاء دالة العداد لكل عنصر
+        document.addEventListener("DOMContentLoaded", function() {
+            animateCounter("counter1", 0, 46878, 10000); 
+            animateCounter("counter2", 0, 1511, 10000);  
+            animateCounter("counter3", 0, 17281, 10000);  
         });
-      }
-    });
-  
-    // إغلاق القوائم عند النقر خارجها
-    document.addEventListener("click", function(e) {
-      if (!e.target.closest("nav")) {
-        document.querySelectorAll(".dropdown-menu").forEach(menu => {
-          menu.style.display = "none";
+
+        // جعل القوائم المنسدلة تفتح عند الضغط على الهواتف
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll("nav .nav-item");
+        
+            dropdowns.forEach(item => {
+                const link = item.querySelector(".nav-link");
+                const menu = item.querySelector(".dropdown-menu");
+        
+                if(menu) {
+                    link.addEventListener("click", function(e) {
+                        if (window.innerWidth <= 768) { // فقط للشاشات الصغيرة
+                            e.preventDefault();
+                            // إغلاق القوائم الأخرى
+                            dropdowns.forEach(other => {
+                                if (other !== item && other.querySelector(".dropdown-menu")) {
+                                    other.querySelector(".dropdown-menu").style.display = "none";
+                                }
+                            });
+                            // التبديل بين العرض والإخفاء
+                            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+                        }
+                    });
+                }
+            });
+        
+            // إغلاق القوائم عند النقر خارجها
+            document.addEventListener("click", function(e) {
+                if (!e.target.closest("nav")) {
+                    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                        menu.style.display = "none";
+                    });
+                }
+            });
         });
-      }
-    });
-  });
-  </script>
-  
-
-
+    </script>
 </body>
 </html>
