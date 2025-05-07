@@ -365,17 +365,31 @@
                 width: 100%;
             }
         }
-.full-text {
+        .short-text, .read-more-btn {
         display: none;
     }
-
-    @media (min-width: 768px) {
+    
+    @media (max-width: 767px) {
         .short-text, .read-more-btn {
-            display: none !important;
+            display: block;
         }
         .full-text {
-            display: block !important;
+            display: none;
         }
+    }
+    
+    @media (min-width: 768px) {
+        .short-text, .read-more-btn {
+            display: none;
+        }
+        .full-text {
+            display: block;
+        }
+    }
+   
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
     </style>
 </head>
@@ -461,7 +475,7 @@
             </div>
         </div>
     </div>
-<br><br> 
+
  
 
 <div style="width: 80%; margin: auto;">
@@ -472,7 +486,7 @@
             <div class="col-md-6 mb-3 mb-md-0 text-right">
                 <div id="textBox" class="p-4 border rounded"
                      style="background: linear-gradient(135deg, #fce4ec, #f8bbd0); box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background 0.5s;">
-                    <h3 style="color: darkred;">رسالة المكتبة</h3>
+                    <h3 style="color: darkred;"> كلمة مدير المكتبة</h3>
 
                     <!-- نص مختصر يظهر في الموبايل -->
                     <p class="short-text" style="font-size: 18px;">
@@ -480,9 +494,10 @@
                     </p>
 
                     <!-- نص كامل يظهر في الشاشة الكبيرة -->
-                    <p class="full-text" style="font-size: 18px;">
+                    <p class="full-text" style="font-size: 18px; font-family: 'Arial', sans-serif;">
                         تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
-                                      تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
+                        تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
+                        تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
                     </p>
 
                     <!-- زر "المزيد" يظهر فقط في الموبايل -->
@@ -575,7 +590,7 @@
             </div>
 
             <div class="footer-section">
-                <h2>تابعنا</h2>
+                <h2>موقع المكتبة</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 
@@ -668,23 +683,19 @@
             });
         });
     </script>
-<script>
-    // تابع لمراقبة متى يظهر العنصر في الشاشة
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            const box = entry.target;
-            if (entry.isIntersecting) {
-                box.style.background = "linear-gradient(135deg, #e0e0e0, #bdbdbd)"; // رمادي
-                box.classList.add('animate__animated', 'animate__fadeInUp');
-            }
-        });
-    }, {
-        threshold: 0.5 // النسبة المطلوبة من الظهور
-    });
 
-    // عنصر ديف الكتابة
-    const target = document.getElementById('textBox');
-    observer.observe(target);
+<script>
+    // عرض النص الكامل عند الضغط على "قراءة المزيد"
+    function showFullText() {
+        document.querySelector('.short-text').style.display = 'none';
+        document.querySelector('.full-text').style.display = 'block';
+        document.querySelector('.read-more-btn').style.display = 'none';
+        
+        // إضافة حركة ظهور تدريجي للنص
+        document.querySelector('.full-text').style.animation = 'fadeIn 0.5s ease-in';
+    }
+    
+    
 </script>
 <script>
     // تغيير اللون والتحريك عند الظهور
@@ -702,12 +713,7 @@
     const target = document.getElementById('textBox');
     observer.observe(target);
 
-    // عرض النص الكامل عند الضغط على "قراءة المزيد"
-    function showFullText() {
-        document.querySelector('.short-text').style.display = 'none';
-        document.querySelector('.full-text').style.display = 'block';
-        document.querySelector('.read-more-btn').style.display = 'none';
-    }
+   
 </script>
 </body>
 </html>
