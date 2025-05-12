@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- يمكن تضمين مكتبة Animate.css و WOW.js لتحريك العناصر -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background-image: url('images.jfif');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #main {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            margin: 0 auto;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
+
+        nav {
+            background-color: #000000;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        #image-section {
+            width: 100%;
+            height: 500px;
+            background-image: url('photo_page_gard/Design sans titre.png');
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            position: relative;
+        }
+
+        /* باقي الأنماط */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #000000;
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                transition: all 0.5s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                position: sticky;
+                top: 0;
+            }
+            
+            #image-section {
+                margin-top: 0;
+            }
+            
+            .logo-container img {
+                max-height: 60px;
+            }
+        }
+
+        footer {
+            background-color: #000000; 
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        footer .footer-section {
+            margin: 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid white;
+        }
+
+       
+
+        .footer-item {
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: bold;
+            color: red;
+        }
+ 
+
+   .responsive-content-box {
+    overflow: hidden;
+  }
+  
+  .dynamic-image:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .text-section, .image-section {
+      width: 100% !important;
+      float: none !important;
+    }
+  }    
+.responsive-content-box {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 6px;
+    background: transparent;
+    transition: all 0.5s ease;
+  }
+
+  .text-section {
+    
+    flex: 3;
+    min-width: 300px;
+    padding: 25px;
+    font-size: 28px;
+    line-height: 1.7;
+    border-radius: 10px;
+    background: transparent;
+    text-align: justify;
+    text-justify: inter-word;
+    box-shadow: 0 5px 15px rgba(224, 220, 220, 0.1);
+    transition: all 0.5s ease;
+    backdrop-filter: blur(5px);
+    border-left: 5px solid #3498db;
+  }
+
+  .text-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+   
+  }
+
+  .dynamic-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(226, 223, 223, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .dynamic-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .responsive-content-box {
+      flex-direction: column;
+      width: 95%;
+    }
+    
+    .image-section, 
+    .text-section {
+      width: 100%;
+      flex: none;
+    }
+    
+    .text-section {
+      font-size: 18px;
+      padding: 20px;
+    }
+    
+    .image-section {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .text-section {
+      font-size: 16px;
+      padding: 15px;
+    }
+  }
+  .hover-effect:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: 1;
+        color: #2c3e50;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+   
+     .hover-effect:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: 1;
+        color: #2c3e50;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    @keyframes shake {
+        0% { transform: translateX(0) }
+        25% { transform: translateX(-5px) }
+        50% { transform: translateX(5px) }
+        75% { transform: translateX(-5px) }
+        100% { transform: translateX(0) }
+    }
+    
+    .text-section {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .text-section p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+      
+       
+    </style>
+</head>
+<body dir="rtl">
+
+    <!-- Main Container -->
+    <div id="main">
+        <div class="logo-container"   style="width: 80%; text-align: right;">
+            <img class="img-fluid" src="01.png" alt="شعار المكتبة">
+        </div>
+        
+        <div class="logo-container" style="width: 20%; text-align: left;">
+            <img class="img-fluid" src="02.png" width="100" height="140"  alt="شعار المكتبة">
+        </div>
+    </div>
+    
+
+    <nav>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <ul id="nav-links">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="">المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="تعريف المكتبة  .html">تعريف للمكتبة</a>
+                    <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
+                    <a class="dropdown-item" href="فضاءات المكتبة.html">فضاءات المكتبة</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="">ملحقات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="bouchgron.html">بوشقرون</a>
+                    <a class="dropdown-item" href="mkhadma.html">مخادمة</a>
+                    <a class="dropdown-item" href="#">عين الناقه</a>
+                    <a class="dropdown-item" href="عين زعطوط.html">عين زعطوط</a>
+                    <a class="dropdown-item" href="liwa.html">لـيوة</a>
+                    <a class="dropdown-item" href="#">الحاجب</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="">نشاطات المكــتبة الرئــيسية</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="نشاطات 2024.html">2024</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost/site%20web/opac.php">البحث البلبيوغرافي</a>
+            </li>
+        </ul>
+    </nav>
+
+</br></br>
+
+  <center><h1 style="color: red; font-weight: bold;"> النظـــام الـــداخلـــــي للمكتبــــــــة</h1></center>
+  </br></br>
+  
+ 
+
+<div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p>يهدف هذا النظام إلى ضبط القواعد المتعلقة بتسيير مكتبة المطالعة العمومية لولاية بسكرة وتحديد الأحكام التي تطبق على رواد المكتبة ، وحقوق و التزامات كل طرف حيث تسرى أحكام هدا النظام على كل مستفيد من طلبة ، اساتذة باحثين و تلاميذ مدارس و كل الفئات الاجتماعية التي لها علاقة بالمكتبة</p>
+    
+   
+</div>
+</br>
+  
+
+ <h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+ الباب الأول: التعريف بالمكتبة و أقسام و أهدافها:
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+     <p class="hover-effect">المادة 1 : مكتبة المطالعة العمومية لولاية بسكرة، مكتبة عامة تطبق التقانين العلمية في معالجة أرصدتها الفكرية: فهي تطبق تصنيف ديوي العشري في تصنيف العلوم و التخصصات الموجودة ضمن رصيدها .</p>
+     <p class="hover-effect">المادة 2: عملا المادة 5 من المرسوم التنفيذي رقم 07-275 المؤرخ في 18 سيبتمبر2007،تقوم مكتبة المطالعة العمومية بإنجاز المهام التالية:</p>
+    
+    <p class="hover-effect">* توفير الكتاب بمختلف دعائمه لترقية المطالعة العمومية و تشجيعها.</p>
+    <p class="hover-effect">* وضع الأرصدة الوثائقية تحت تصرف المستعملين.</p>
+    <p class="hover-effect">* وضع خدمات مكتبة المطالعة العمومية تحت تصرف كل شريحة اجتماعية.</p>
+    <p class="hover-effect">* تخصيص فضاء ملائم لاحتياجات الطفل لتشجيع إبداعه.</p>
+    <p class="hover-effect">* توفير فضاء للدراسات و تحضير الامتحانات.</p>
+    <p class="hover-effect">* تسهيل تطور الكفاءات القاعدية لاستعمال الإعلام و الإعلام الآلي.</p>
+    <p class="hover-effect">* توفير الوسائل التي تسمح لأشخاص المعاقين بالمطالعة العمومية</p>
+    <p>بالإضافة إلى العمل على ترقية الأفاق المعرفية و الثقافية من خلال بعض النشاطات.</p>
+    
+</div>
+  
+<br>
+<h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+  الباب الثاني: الانخراط بالمكتبة و الدخول إليها:
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p class="hover-effect">المادة 3 : للانخراط بالمكتبة يجب تكوين الملف التالي:</p>
+    
+    <p class="hover-effect">* صورتين شمسيتين.</p>
+    <p class="hover-effect">* نسخة من بطاقة التعريف الوطنية أو ر.س أو ج.س.</p>
+    <p class="hover-effect">* استمارة المعلومات.</p>
+    <p class="hover-effect">المادة 4 : بطاقة الانخراط تعد بطاقة شخصية صالحة لمدة سنة واحدة فقط.</p>
+     <p class="hover-effect">لمادة 5: المكتبة مفتوحة على مدار أيام الأسبوع ما عدا أيام العطلة الرسمية و ذلك من الساعة 80:00 صباحا إلى غاية الساعة 17:00 مساء،و يوم الجمعة من الساعة08:00 إلى غاية 12:00؛ويتم تمديد ساعات عملها بعد فصل الشتاء إلى غاية الساعة 19:00 مساء .</p>
+      <p class="hover-effect">المادة 6: لا يسمح لرواد المكتبة دخول الفضاءات الغير مخصصة لهم.</p>
+     <p class="hover-effect">المادة 7: فضاء الأطفال مخصص لتوجيه و التثقيف وليس للاحتفاظ بالأطفال.</p>
+         <p class="hover-effect">المادة 8: الأطفال دون سن التمدرس يجب أن يكونوا تحت مسؤولية أوليائهم داخل فضاء المكتبة.</p>
+           <p class="hover-effect">المادة 9: يجب إظهاربطاقة المكتبة و بطاقة التعريف عند الدخول.</p>
+           <p class="hover-effect">المادة 10: لا يسمح بالزيارات غير مرخص لها من طرف الولاية ،أو التي لم تحصل على إذن و موافقة مدير المكتبة مهما كان المبرر و طبيعة الزيارة.</p>
+    
+</div>
+  <br>
+<h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+ الباب الثالث: الإعارة و المطالعة:
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p class="hover-effect">المادة 11: يجب تقديم بطاقة الانخراط مع كل عملية إعارة.</p>
+    
+    <p class="hover-effect">المادة 12:تتم عملية المطالعة و الإعارة في المكتبة كالأتي:</p>
+    <p class="hover-effect">أ - مطالعة داخلية: تسمح للمستفيد بالاطلاع على المراجع داخل قاعة المطالعة على أن لا يتعدى عدد المراجع المتصفحة ثلاث نسخ دفعة واحدة .</p>
+    <p class="hover-effect">ب - إعارة خارجية: يسمح باستعارة ثلاث 03 مراجع لمدة 15 يوم قابلة لتجديد مرة واحدة .</p>
+    <p class="hover-effect">المادة 13: يمكن للمنخرطين تقديم طلب حجز الوثائق الموجهة للإعارة على أن لا تتجاوز مرجعين على الأكثر.</p>
+     <p class="hover-effect">المادة 14: تستثنى القواميس و النسخ النادرة أو المحدودة أو المطلوبة بكثرة من الإعارة الخارجية.</p>
+      <p class="hover-effect">لمادة 15: لضمان السير الحسن للإعارة يجب على المنخرطين التقيد بما يلي:</p>
+     <p class="hover-effect">* احترام مواقيت الإعارة و الإرجاع، وهذا بإتباع البرنامج المعلن عليه عند مدخل المكتبة .</p>
+         <p class="hover-effect">* إظهار بطاقة المكتبة و بطاقة التعريف عند الإعارة.</p>
+           <p class="hover-effect">* تفادي الازدحام ، و تجنب إحداث الطوابير أمام بنك الإعارة و ذلك بالتزام الأماكن المخصصة لأنظار</p>
+           <p class="hover-effect">* وجوب حضور صاحب البطاقة وعدم إرسال من يقوم بالإعارة بدلا عنه ، و في حالة إضاعتها يتقدم المعني إلى إدارة المكتبة بطلب إعادتها ،
+
+ولا تسلم النسخة الثانية إلا بعد مضي مدة أدناها أسبوع و أقصاها شهر ولا تجدد إلا مرة واحدة .</p>
+    <p class="hover-effect"> *عند إرجاع المراجع تتم عملية التأكيد من سلامتها من التمزق و التشويه و غير ذالك .</p>
+         <p class="hover-effect"> المادة 16: تعد قاعة المطالعة مكانا لمراجعة الدروس و إنجاز البحوث و المطالعة و لضمان هذا يجب التقيد بالاتي :</p>
+          <p class="hover-effect"> * الهدوء التام و المطالعة بصورة فردية ، و تفادي العمل الجماعي و المناقشات التي تؤدي إلى إحداث الفوضى و الضجيج داخل القاعة .</p>
+           <p class="hover-effect"> * عدم وضع المعاطف و المظلات و ما شابه ذلك فوق الطاولات .</p>
+            <p class="hover-effect"> * عدم إحضار المأكولات أو المشروبات أو الجرائد إلى القاعة ، و كذالك عدم التدخين.</p>
+            <p class="hover-effect"> * إيقاف الجوال أو وضعه على الصامت فور دخول القاعة و تفادي استعمال أي جهاز يشوش على الغير.</p>
+            <p class="hover-effect"> * لا يسمح إلا بتصفح ثلاثة كتب دفعة واحدة .</p>
+            <p class="hover-effect"> * تجنب الاتكاء على الكتب و الكتابة عليها ووضعها على بعض مفتوحة ، و يجب تصفحها بعناية ، و إرجاعها إلى أماكنها بالوضعية العمودية .</p>
+             <p class="hover-effect"> المادة 17: يوجد مشرف على القاعة ، فعلى الطلبة إتباع تعليماته و الرجوع إليه للاستعلام أو التوجيه أو الطلب أي خدمة .</p>
+             <p class="hover-effect"> المادة 18: المستعير ملزم بإرجاع في صورتها الأصلية و في حالة الضياع أو الإتلاف عليه توفير المرجع في نسخة جديدة (نفس العنوان) و عند ندرتها عند الناشرين تعوض من نفس الصنف ضمن قائمة عناوين تقترح من طرف الإدارة.</p>
+             
+</div>
+  <br>
+  <h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+الباب الرابع : قاعة الأنترنات و الإعلام الآلي
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p class="hover-effect">المادة 19: تخضع عملية استعمال الأنترنات إلى مبدأ احترام القواعد المعمول بها في المكتبة .</p>
+     <p class="hover-effect">المادة 20: الاستفادة من خدمات الانترنت مسموح بها لأشخاص المنخرطين بالمكتبة .</p>
+     <p class="hover-effect">المادة 21: يخضع قبول الفئات دون سن 14 إلى ترخيص أبوي.</p>
+     <p class="hover-effect">المادة 22: يسمح باستعمال وسائل الإعلام الآلي الموضوعة في خدمة المنخرطين باستعمال وسائل الاتصال المتعددة كالبرامج المكتبية و البحث عن طريق الأنترنات.</p>
+     <p class="hover-effect">المادة 23: كل وسائل الإعلام الآلي المرتبطة بوسائل الطبع تحدد أسعارها من قبل المكتبة لاحقا .</p>
+     <p class="hover-effect">المادة 24: الحجم الساعي اليومي للفرد الواحد لا يتجاوز 60 دقيقة.</p>
+     <p class="hover-effect">المادة 25: يمنع على مستعملي القاعة استعمال الانترنت في غرض غير البحث العلمي و الثقافي كما يمنع تواجد أكثر من شخصين أمام كل حاسوب .</p>
+     <p class="hover-effect">المادة 26: يسمح باستخدام الوسائل التالية :</p>
+     <p class="hover-effect">* استعمال الأقراص المضغوطة .</p>
+    <p class="hover-effect">*استعمال WAB MAILS* حيث ، يسمح بالرسائل الإلكترونية الخاصة و ترجع مسؤولية هذه العملية للمستعملين .</p>
+     <p class="hover-effect">* تسجيل المعطيات في وسائط الحفظ .</p>
+       <p class="hover-effect">* تحويل المعطيات من وسائط الحفظ تجاه الانترنت .</p>  
+     <p class="hover-effect">يمنع استعمال الوسائل التالية :</p>
+     <p class="hover-effect">* تسجيل المعطيات في القرص الصلب الخاص بالحاسوب .</p>
+       <p class="hover-effect">*تسجيل و تحويل المعطيات المتعارضة مع خدمة المرفق العام و القوانين الجزائرية .</p>
+        <p class="hover-effect">* تحميل الملفات بموجب قانوني الملكية مهما كان نوع(نص ، صورة ، صوت......) .</p>
+         <p class="hover-effect">* إرسال المراسلات التلقائية .</p>
+          <p class="hover-effect">*الألعاب على الشبكة .</p>
+          <p class="hover-effect">* تحويل في البرنامج FTP</p>
+            <p class="hover-effect">* يمنع كل تعديل أو تحويل في المساحة المخصصة على شبكة الانترنت.</p>
+              <p class="hover-effect">*كل حاسوب مدعم بجهاز مراقبة لكشف كيفية البحث في الشبكة .</p>
+               <p class="hover-effect">المادة 27: لأجل السير الحسن و التنظيم الجيد للقاعة ينطبق عليها كل ما تم ذكره سابقا في المادة السابعة عشر و الثامن عشر (17-18) بالنسبة لتنظيم قاعة المطالعة .</p>
+                <p class="hover-effect">المادة 28: تستقبل المكتبة الأطفال دون سن التمدرس مرفقين بأوليائهم في أوقات محددة و معلن عنها.</p>
+                 <p class="hover-effect">المادة 29: ينتمي الأطفال دون سن التمدرس إلى مجموعات حسب السن(من 3 إلى 4 سنوات ) و( من 5 إلى 6 سنوات) .</p>
+                <p class="hover-effect">المادة 30 : لا يتعدى الوقت المخصص للأطفال دون سن التمدرس الساعة ونصف متتالية .</p>
+                <p class="hover-effect">المادة 31: الأطفال المتمدرسون يستقبلون مرتين إلى ثلاث في الأسبوع لمدة ساعتين لكل حصة.</p>
+                  <p class="hover-effect">المادة 32: تخصص المكتبة أنشطة و برامج إضافية خاصة بالفئات ذوي الاحتياجات الخاصة.</p>
+                  
+
+</div>
+  <br>
+<h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+الباب السادس : ورشة التحكم في اللغات
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p class="hover-effect">المادة 33: توفير المكتبة على ورشتين للتكوين في ما يلي :</p>
+     <p class="hover-effect">* التحكم في اللغات الأجنبية (الفرنسية - الانجليزية).</p>
+       <p class="hover-effect">* التحكم في استخدامات الإعلام الآلي و لانترنت.</p>           
+        <p class="hover-effect">المادة 34 : الحجم الساعي لايتجاوز 3 ساعات في الأسبوع مقسمة إلى حصتين.</p>
+        <p class="hover-effect">المادة 35: تحديد القيم المالية للتسجيل السنوي من طرف الإدارة و يعلن عنها .</p>
+        <p class="hover-effect">المادة 36: على كل مسجل الالتزام بالمجموعة التي ينتمي إليها و توقيتها .</p>
+</div>
+  <br>
+<h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+الباب السابع : المخالفات و العقوبات
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p class="hover-effect">المادة 37: كل مستفيد لم يحترم النظام الداخلي أو يخل به يتعرض لتدابير عقابية محددة حسب درجة المخالفة المرتكبة .</p>
+     <p class="hover-effect">المادة 38: يعتبر عدم احترام موظفي المكتبة و إهانتهم ورفض تعليماتهم إخلالا بالنظام الداخلي يعرض صاحبه للعقوبات التالية :</p>
+      <p class="hover-effect">* توجيه إنذار أو توبيخ كتابي.</p>
+      <p class="hover-effect">* سحب البطاقة مع الطرد من المكتبة لمدة محددة .</p>
+      <p class="hover-effect">* السحب الكلي للبطاقة و الشطب من قائمة المستفيدين .</p>
+      <p class="hover-effect">المادة 39: يتعرض المستعير للكتب عند تجاوز المدة القانونية للإرجاع لعقوبات يحددها برنامج الإعارة، وه\ه العقوبة آلية و نهائية يعود إعادة النظر فيها إلى السلطة التقديرية.</p>
+</div>
+  <br>
+<h3 style="color: red; 
+          font-weight: bold; 
+          text-align: right; 
+          margin-right: 80px;
+          transition: margin 0.5s ease;">
+الباب السابع : المخالفات و العقوبات
+</h3>
+
+ <div class="text-section wow animate__animated animate__fadeInRight" style="width: 80%; margin: 0 auto;">
+    <p class="hover-effect">المادة 40: يجب على الجميع من طلبة وعمال و مستفيدين احترام بنود هذا النظام و التقيد بأحكامه من أجل السير الحسن للمكتبة .</p>
+     <p class="hover-effect">المادة 41: يكلف مدير المكتب بالسهر على تطبيق هذا النظام و احترامه.</p>
+     <p class="hover-effect">المادة 42: يمكن تعديل بنود و مواد هذا النظام كلما استدعت الضرورة ذلك ، عند حدوث المستجدات أو تغير المعطيات مع مراعاة القاعدة القانونية.</p>
+      <p class="hover-effect">المادة 43:تسري أحكام هذا النظام بداية من تاريخ المصادقة عليه من طرف وزارة الثقافة .</p>
+       <p class="hover-effect">المادة 44: ينشر هذا النظام الداخلي على مستوى المكتبة و تسليم نسخ منه للمنخرطين.</p>
+      
+    
+</div>
+  <br>
+
+
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h2>معلومات الاتصال</h2>
+                <ul>
+                    <li> <a >العنوان:شارع محمد بوضياف بجانب مسرح الهواء الطلق بسكرة</a></li>
+                    <li>الهاتف: 033.55.46.42 </li>
+                    <li>الفاكس: 033.55.46.20 </li>
+                    <li>البريد الإلكتروني: bibliobiskra@yahoo.fr</li>
+                </ul>
+                          <div class="social-icons">
+                    <a href="https://www.facebook.com/bplp.biskra.07"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+
+            </div>
+
+            <div class="footer-section">
+                <h2>مواقع مهمة</h2>
+                <ul>
+                    <li><a href="#">وزارة الثقافة و الفنون </a></li>
+                    <li><a href="#">المكتبة الوطنية</a></li>
+                    <li><a href="#">...........</a></li>
+                    <li><a href="#">............</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h2>موقع المكتبة</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1049837302144!2d5.709531124853786!3d34.85358932499558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f509c90e897a17%3A0xf75d2400350e89ed!2sVP36%2BFQR%20la%20biblioth%C3%A8que%20publique%2C%20Biskra!5e0!3m2!1sfr!2sdz!4v1719382654248!5m2!1sfr!2sdz" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy;  جميع الحقوق محفوظة 2025 | المكتبة الرئيسية للمطالعة العمومية - المجاهد محمد عصامي - بسكرة
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+        
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 15,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000, 
+                disableOnInteraction: false,
+            },
+        });
+
+        function animateCounter(id, start, end, duration) {
+            let current = start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / (end - start)));
+            
+            const timer = setInterval(function() {
+                current += increment;
+                document.getElementById(id).textContent = current;
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            animateCounter("counter1", 0, 46878, 10000); 
+            animateCounter("counter2", 0, 1511, 10000);  
+            animateCounter("counter3", 0, 17281, 10000);  
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll("nav .nav-item");
+        
+            dropdowns.forEach(item => {
+                const link = item.querySelector(".nav-link");
+                const menu = item.querySelector(".dropdown-menu");
+        
+                if(menu) {
+                    link.addEventListener("click", function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            dropdowns.forEach(other => {
+                                if (other !== item && other.querySelector(".dropdown-menu")) {
+                                    other.querySelector(".dropdown-menu").style.display = "none";
+                                }
+                            });
+                            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+                        }
+                    });
+                }
+            });
+        
+            document.addEventListener("click", function(e) {
+                if (!e.target.closest("nav")) {
+                    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                        menu.style.display = "none";
+                    });
+                }
+            });
+        });
+    </script>
+
+<script>
+    // عرض النص الكامل عند الضغط على "قراءة المزيد"
+    function showFullText() {
+        document.querySelector('.short-text').style.display = 'none';
+        document.querySelector('.full-text').style.display = 'block';
+        document.querySelector('.read-more-btn').style.display = 'none';
+        
+        // إضافة حركة ظهور تدريجي للنص
+        document.querySelector('.full-text').style.animation = 'fadeIn 0.5s ease-in';
+    }
+    
+    
+</script>
+<script>
+    // تغيير اللون والتحريك عند الظهور
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const box = entry.target;
+            if (entry.isIntersecting) {
+                box.style.background = "linear-gradient(135deg, #e0e0e0, #bdbdbd)";
+                box.classList.add('animate__animated', 'animate__fadeInUp');
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    const target = document.getElementById('textBox');
+    observer.observe(target);
+
+   
+</script>
+</body>
+</html>

@@ -227,38 +227,7 @@
             border-top: 1px solid white;
         }
 
-        .swiper {
-            width: 50%;
-            height: 50%;
-            margin-top: 240px;
-            margin-left: 2%;
-        }
-
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 250px;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
-        }
-
-        .statistics-wrapper {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .single-ststistics {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
+       
 
         .footer-item {
             text-align: center;
@@ -271,186 +240,121 @@
             color: red;
         }
 
-        .image-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 0 15px;
-            margin: 30px 0;
-        }
-
-        .image-container {
-            position: relative;
-            width: 250px;
-            height: 250px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 2px solid black;
-            padding: 2px;
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.1);
-        }
-
-        .comment {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            font-size: 16px;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translateY(100%);
-            text-decoration: none;
-        }
-
-        .image-container:hover .comment {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 900px) {
-            .image-container {
-                width: 220px;
-                height: 220px;
-            }
-            
-            .swiper {
-                width: 70%;
-                margin-top: 180px;
-            }
-            
-            h2 {
-                font-size: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .image-row {
-                flex-direction: column;
-                align-items: center;
-                gap: 25px;
-            }
-            
-            .image-container {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .swiper {
-                width: 90%;
-                margin-top: 120px;
-            }
-            
-            #image-section {
-                height: 350px;
-            }
-            
-            .footer-section {
-                margin: 10px;
-                width: 100%;
-            }
-        }
-        .short-text, .read-more-btn {
-        display: none;
-    }
-    
-    @media (max-width: 767px) {
-        .short-text, .read-more-btn {
-            display: block;
-        }
-        .full-text {
-            display: none;
-        }
-    }
-    
-    @media (min-width: 768px) {
-        .short-text, .read-more-btn {
-            display: none;
-        }
-        .full-text {
-            display: block;
-        }
-    }
-   
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        .wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-
-    
     .box {
-        background: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
-        border-radius: 10px;
-        padding: 40px;
-        margin: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        text-align: center;
-        border: 1px solid #ddd;
-    }
-    
-    .box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        background-color: #ffcc00;
-        border-color: #ffcc00;
-    }
-    
-    .top-box {
-        width: 60%;
-        margin: 0 auto 20px;
-    }
-    
-    .bottom-row {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .bottom-row .box {
-        width: calc(50% - 40px);
-        min-width: 300px;
-    }
-    
-    @media (max-width: 768px) {
-        .top-box {
-            width: 90%;
-        }
-        
-        .bottom-row .box {
-            width: 90%;
-            margin: 10px auto;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .top-box, .bottom-row .box {
-            width: 95%;
-        }
-    }
-    .footer-item img {
-        transition: transform 0.3s ease;
+        justify-content: center;  /* محاذاة أفقية للوسط */
+  align-items: center;       /* محاذاة عمودية للوسط */
+  text-align: center;
+      padding: 15px 20px;
+      border-radius: 12px;
+      margin: 10px auto;
+      width: 160px;
+      min-height: 40px;
+      color: rgb(7, 5, 5);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+      position: relative;
+      z-index: 1;
     }
 
-    .footer-item img:hover {
-        transform: translateY(-10px) scale(1.05);
+    .manager {
+      background-color: #4CAF50;
+      font-weight: bold;
+      animation-delay: 0s;
     }
+
+    .section {
+      background-color: #2196F3;
+    }
+
+    .unit {
+      background-color: #FF9800;
+      display: block;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .sub-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sub-container .box:nth-child(1) { animation-delay: 0.2s; }
+    .sub-container .box:nth-child(2) { animation-delay: 0.4s; }
+    .sub-container .box:nth-child(3) { animation-delay: 0.6s; }
+    .sub-container .box:nth-child(4) { animation-delay: 0.8s; }
+
+    /* الخط من المدير إلى الأقسام */
+    .manager::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: black;
+    }
+
+    /* خط أفقي يصل بين الأقسام */
+    .sections-line {
+      width: 70%;
+      height: 2px;
+      background: black;
+      margin: 0 auto;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* خطوط من الأقسام إلى الوحدات */
+    .section::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 20px;
+      background: black;
+    }
+
+    .unit-line {
+      width: 2px;
+      height: 20px;
+      background: black;
+      margin-bottom: -10px;
+      margin-top: -10px;
+    }  
+.box:hover {
+  transform: translateY(0) scale(1.05); /* كلاهما معًا */
+}
+
     </style>
 </head>
 <body dir="rtl">
@@ -476,9 +380,8 @@
             <li class="nav-item active">
                 <a class="nav-link" href="">المكــتبة الرئــيسية</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="تعريف المكتبة الرئيسية.html">تعريف للمكتبة</a>
-                                <a class="dropdown-item" href="مخطط.html">المخطط العام للمكتبة</a> 
-                    <a class="dropdown-item" href="النظام الداخلي للمكتبة.html">النظام الداخلي للمكتبة</a>
+                    <a class="dropdown-item" href="تعريف المكتبة  .html">تعريف للمكتبة</a>
+                    <a class="dropdown-item" href="النظام الداخلي.html">النظام الداخلي للمكتبة</a>
                     <a class="dropdown-item" href="فضاءات المكتبة.html">فضاءات المكتبة</a>
                 </div>
             </li>
@@ -500,138 +403,49 @@
                 </div>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="https://localhost/site%20web/opac.php">البحث البلبيوغرافي</a>
+                <a class="nav-link" href="http://localhost/site%20web/opac.php">البحث البلبيوغرافي</a>
             </li>
         </ul>
     </nav>
 
-    <!-- قسم الصورة بعد الناف بار -->
-    <div id="image-section">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/1.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/2.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/3.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/4.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/5.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/6.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/7.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="photo_page_gard/8.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
- 
-
-<div style="width: 80%; margin: auto;">
-    <div class="container my-5">
-        <div class="row align-items-center">
-
-            <!-- ديف النص -->
-           
-
-            <!-- ديف الصورة -->
-            <div class="col-md-6 text-center">
-                <div class="p-4 border rounded animate__animated animate__fadeInLeft"
-                     style="background-color: transparent; box-shadow: none;">
-                    <img src="photo_page_gard/derecteur.jpg" class="img-fluid rounded shadow" alt="صورة المكتبة">
-                </div>
-            </div>
-            <div class="col-md-6 mb-3 mb-md-0 text-right">
-                <div id="textBox" class="p-4 border rounded"
-                     style="background: linear-gradient(135deg, #fce4ec, #f8bbd0); box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background 0.5s;">
-                    <h3 style="color: darkred;"> كلمة مدير المكتبة</h3>
-
-                    <!-- نص مختصر يظهر في الموبايل -->
-                    <p class="short-text" style="font-size: 18px;">
-                        تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية...
-                    </p>
-
-                    <!-- نص كامل يظهر في الشاشة الكبيرة -->
-                    <p class="full-text" style="font-size: 18px; font-family: 'Arial', sans-serif;">
-                        تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
-                        تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
-                        تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية تسعى مكتبتنا إلى نشر الثقافة والمعرفة من خلال توفير بيئة تعليمية غنية بالكتب والموارد المتنوعة، ودعم النشاطات الفكرية والاجتماعية.
-                    </p>
-
-                    <!-- زر "المزيد" يظهر فقط في الموبايل -->
-                    <a href="javascript:void(0);" class="read-more-btn text-primary" onclick="showFullText()">قراءة المزيد</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-    <br> 
+</br> </br> 
+<div class="wrapper">
+    <div class="box manager wow animate__animated animate__fadeInUp">المدير</div>
   
-    <center><h2>أخر نشاطات المكتبة</h2></center>
-    <br>
-    
-    <div class="image-row">
-        <div class="image-container">
-            <img src="photo_page_gard/4.jpg" alt="نشاط 1">
-            <a href="page1.html" class="comment">نشاط 1: عرض ثقافي في المكتبة</a>
-        </div>
-        <div class="image-container">
-            <img src="photo_page_gard/5.jpg" alt="نشاط 2">
-            <a href="page2.html" class="comment">نشاط 2: ورشة كتابة</a>
-        </div>
-        <div class="image-container">
-            <img src="photo_page_gard/6.jpg" alt="نشاط 3">
-            <a href="page3.html" class="comment">نشاط 3: جلسة قراءة للأطفال</a>
-        </div>
-           <div class="image-container">
-            <img src="photo_page_gard/6.jpg" alt="نشاط 3">
-            <a href="page3.html" class="comment">نشاط 3: جلسة قراءة للأطفال</a>
-        </div>
-       
-
+    <div class="sections-line"></div>
+  
+    <div class="container">
+      <div class="sub-container">
+        <div class="box section">قسم خدمة المستخدمين</div>
+        <div class="unit-line"></div>
+        <div class="box unit">مصلحة تسيير الرصيد و توجيه القراء</div>
+        <div class="unit-line"></div>
+        <div class="box unit">مصلحة التنشيط الثقافي و التبادلات</div>
+      </div>
+  
+      <div class="sub-container">
+        <div class="box section">مصلحة الإدارة والوسائل</div>
+        <div class="unit-line"></div>
+        <div class="box unit">فرع الوسائل</div>
+        <div class="unit-line"></div>
+        <div class="box unit">فرع الميزانية والمحاسبة</div>
+        <div class="unit-line"></div>
+        <div class="box unit">فرع المستخدمين</div>
+      </div>
+  
+      <div class="sub-container">
+        <div class="box section">قسم معالجة الرصيد الوثائقي</div>
+        <div class="unit-line"></div>
+        <div class="box unit">مصلحة الاقتناء</div>
+        <div class="unit-line"></div>
+        <div class="box unit">مصلحة الإعلام الآلي و السمعي البصري</div>
+        <div class="unit-line"></div>
+        <div class="box unit">مصلحة معالجة الرصيد و صياتنه</div>
+      </div>
     </div>
+  </div>
 
-    <br><br>
-    <center><h2>إحصائيات بيبليوغرافية عامة</h2></center>
-    <div class="statistics-wrapper">
-        <div class="single-ststistics d-flex flex-wrap justify-content-center gap-4">
-            <div class="footer-item text-center">
-                <img src="photo_page_gard/نسخ.png" alt="عدد النسخ" width="150" height="150">
-                <h3 style="font-weight: bold;">عدد النسخ</h3>
-                <h3 id="counter1">0</h3>
-            </div>
-            <div class="footer-item text-center">
-                <img src="photo_page_gard/مسجلين.png" alt="عدد المنخرطين" width="150" height="150">
-                <h3 style="font-weight: bold;">عدد المنخرطين</h3>
-                <h3 id="counter2">0</h3>
-            </div>
-            <div class="footer-item text-center">
-                <img src="photo_page_gard/عناوين.png" alt="عدد العناوين" width="150" height="150">
-                <h3 style="font-weight: bold;">عدد العناوين</h3>
-                <h3 id="counter3">0</h3>
-            </div>
-            <div class="footer-item text-center">
-                <img src="photo_page_gard/004.png" alt="عدد زوار الموقع" width="150" height="150">
-                <h3 style="font-weight: bold;">عدد زوار الموقع</h3>
-                <h3 id="counter4">0</h3>
-            </div>
-        </div>
-    </div>
-    
-
+</br> </br> 
     <footer>
         <div class="footer-content container">
             <div class="footer-section">
@@ -668,7 +482,7 @@
         </div>
 
         <div class="footer-bottom">
-            &copy;  جميع الحقوق محفوظة  2025 (Abbad)| المكتبة الرئيسية للمطالعة العمومية - المجاهد محمد عصامي - بسكرة
+            &copy;  جميع الحقوق محفوظة  2025 (Abbad) | المكتبة الرئيسية للمطالعة العمومية - المجاهد محمد عصامي - بسكرة
         </div>
 
     </footer>
@@ -710,7 +524,7 @@
             
             const timer = setInterval(function() {
                 current += increment;
-                document.getElementById(id).textContent = current;
+                document.getElementById(id).textContent = cuAArrent;
                 if (current === end) {
                     clearInterval(timer);
                 }
@@ -754,20 +568,12 @@
             });
         });
     </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script>
-    // عرض النص الكامل عند الضغط على "قراءة المزيد"
-    function showFullText() {
-        document.querySelector('.short-text').style.display = 'none';
-        document.querySelector('.full-text').style.display = 'block';
-        document.querySelector('.read-more-btn').style.display = 'none';
-        
-        // إضافة حركة ظهور تدريجي للنص
-        document.querySelector('.full-text').style.animation = 'fadeIn 0.5s ease-in';
-    }
-    
-    
+  new WOW().init();
 </script>
+
+
 <script>
     // تغيير اللون والتحريك عند الظهور
     const observer = new IntersectionObserver(entries => {
